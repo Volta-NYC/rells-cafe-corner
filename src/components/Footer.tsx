@@ -55,8 +55,8 @@ export default function Footer() {
           <h3 className="mb-4 font-heading uppercase text-cafe-rose">Accepted Here</h3>
           <p className="text-sm text-cafe-inkSoft/85">Visa, MasterCard, Visa Electron, AmEx</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Image src="https://nativesites.touch2success.com/compressed_images/Appstore.svg" alt="Download on the App Store" width={128} height={39} unoptimized />
-            <Image src="https://nativesites.touch2success.com/compressed_images/Playstore.svg" alt="Get it on Google Play" width={128} height={39} unoptimized />
+            <Image src="/images/appstore.svg" alt="Download on the App Store" width={128} height={39} />
+            <Image src="/images/playstore.svg" alt="Get it on Google Play" width={128} height={39} />
           </div>
         </div>
       </div>
