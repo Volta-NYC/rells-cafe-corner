@@ -21,11 +21,10 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <Image
-              src="https://assets.foodhub.com/static/adbe6939bc20dd710f84ec6592b783c9/img/1758998674phpUEl3iS.jpg"
+              src="/images/logo.jpg"
               alt="Rell's Cafe Corner logo"
               width={56}
               height={56}
-              unoptimized
               className="h-12 w-12 rounded-full border border-cafe-rose object-cover"
             />
             <span className="font-heading text-lg uppercase text-cafe-ink">Rell&apos;s Cafe Corner</span>

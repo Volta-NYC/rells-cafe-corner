@@ -16,10 +16,9 @@ export default function About() {
           className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-cafe-line shadow-soft"
         >
           <Image
-            src="https://assets.touch2success.com/static/adbe6939bc20dd710f84ec6592b783c9/img/1759574097php4ELJbc.jpg"
+            src="/images/chicken-waffles.webp"
             alt="Chicken and waffles"
             fill
-            unoptimized
             className="object-cover"
           />
         </motion.div>

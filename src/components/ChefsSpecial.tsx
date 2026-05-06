@@ -6,19 +6,19 @@ import Image from "next/image";
 const specials = [
   {
     name: "Salad",
-    image: "https://assets.touch2success.com/static/c5da8c3b32b8cc9fc8d76de87e85ec0a/img/1718796543phpF0XrpM.png",
+    image: "/images/salad.webp",
     note: "Fresh greens, bold toppings",
     fit: "object-contain p-8",
   },
   {
     name: "Avocado Toast",
-    image: "https://assets.touch2success.com/static/b1cb275a788a9c10f60a93682b1e7039/img/1758984941php76hwJd.jpg",
+    image: "/images/avocado-toast.webp",
     note: "Creamy, crisp, breakfast-ready",
     fit: "object-cover",
   },
   {
     name: "Macarons",
-    image: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=900&q=80",
+    image: "/images/macarons.jpg",
     note: "Sweet bites for the table",
     fit: "object-cover",
   },
@@ -44,7 +44,7 @@ export default function ChefsSpecial() {
               className="group rounded-[20px] border border-cafe-line bg-white p-3 shadow-card transition-colors hover:border-cafe-rose/60"
             >
               <div className="relative h-72 overflow-hidden rounded-2xl bg-cafe-tintSoft">
-                <Image src={item.image} alt={item.name} fill unoptimized className={`${item.fit} transition duration-500 group-hover:scale-105`} />
+                <Image src={item.image} alt={item.name} fill className={`${item.fit} transition duration-500 group-hover:scale-105`} />
               </div>
               <h3 className="mt-5 text-center font-heading text-2xl uppercase text-cafe-ink">{item.name}</h3>
               <p className="mb-2 mt-2 text-center text-sm text-cafe-muted">{item.note}</p>
