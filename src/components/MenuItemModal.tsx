@@ -103,7 +103,7 @@ export default function MenuItemModal({
   return (
     <AnimatePresence>
       {open && (
-        <>
+        <div className="fixed inset-0 z-[80] flex items-end justify-center sm:items-center sm:p-4">
           <motion.button
             type="button"
             aria-label="Close"
@@ -111,7 +111,7 @@ export default function MenuItemModal({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] bg-cafe-ink/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-cafe-ink/50 backdrop-blur-sm"
           />
           <motion.div
             role="dialog"
@@ -121,7 +121,7 @@ export default function MenuItemModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.98 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="fixed inset-x-0 bottom-0 z-[90] mx-auto flex max-h-[92vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl border border-cafe-line bg-white text-cafe-ink shadow-2xl sm:inset-auto sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-3xl"
+            className="relative z-10 flex max-h-[92vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl border border-cafe-line bg-white text-cafe-ink shadow-2xl sm:rounded-3xl"
           >
             <div className="relative px-6 pb-4 pt-6 sm:px-8 sm:pt-8">
               <button
@@ -241,7 +241,7 @@ export default function MenuItemModal({
               </button>
             </div>
           </motion.div>
-        </>
+        </div>
       )}
     </AnimatePresence>
   );
