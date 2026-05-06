@@ -8,11 +8,10 @@ export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-[100svh] items-end overflow-hidden">
       <Image
-        src="https://assets.touch2success.com/static/adbe6939bc20dd710f84ec6592b783c9/img/1759573816phpEk4WwX.jpg"
+        src="/images/hero-pastries.webp"
         alt="Fresh croissants and pastries"
         fill
         priority
-        unoptimized
         className="object-cover"
       />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.65)_38%,rgba(255,255,255,0.05)_100%)]" />

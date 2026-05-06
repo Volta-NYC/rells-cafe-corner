@@ -22,11 +22,10 @@ export default function Navbar() {
       <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-4 px-5 md:px-8">
         <Link href="/#home" className="flex min-w-0 items-center gap-3" aria-label="Rell's Cafe Corner home">
           <Image
-            src="https://assets.foodhub.com/static/adbe6939bc20dd710f84ec6592b783c9/img/1758998674phpUEl3iS.jpg"
+            src="/images/logo.jpg"
             alt="Rell's Cafe Corner logo"
             width={56}
             height={56}
-            unoptimized
             className="h-12 w-12 rounded-full border-2 border-cafe-rose object-cover"
             priority
           />
