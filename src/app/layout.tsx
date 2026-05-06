@@ -3,7 +3,7 @@ import CartDrawer from "@/components/CartDrawer"
 import { CartProvider } from "@/lib/cart"
 
 export const metadata = {
-  title: "Rell's Cafe Corner | Cherylles Kitchen LLC",
+  title: "Cherylles Kitchen LLC | Sandwich Store in Brooklyn | Order Food Online",
   description: "Brooklyn cafe serving sandwiches, breakfast, salads, wings, desserts, and drinks from 276 Chestnut Street."
 }
 
