@@ -8,7 +8,7 @@ export default function Location() {
           <iframe
             title="Map to Rell's Cafe Corner"
             src="https://www.google.com/maps?q=276%20Chestnut%20Street%2C%20Brooklyn&output=embed"
-            className="h-full min-h-[420px] w-full border-0 grayscale invert"
+            className="h-full min-h-[420px] w-full border-0 grayscale"
             loading="lazy"
           />
         </div>
@@ -19,9 +19,14 @@ export default function Location() {
             <p className="flex gap-3"><MapPin className="mt-1 shrink-0 text-cafe-gold" size={20} /> Delivery in 30 minutes, pickup in just 15 minutes.</p>
             <p className="flex gap-3"><MessageCircle className="mt-1 shrink-0 text-cafe-gold" size={20} /> Questions, catering, or special requests? Reach out before you order.</p>
           </div>
-          <a href="https://rellscafecorner.com/contact-us" target="_blank" rel="noreferrer" className="mt-9 inline-flex rounded-full bg-cafe-gold px-6 py-4 text-sm font-extrabold uppercase text-cafe-black transition hover:bg-cafe-orange">
-            Get in Touch
-          </a>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="https://maps.google.com/?q=276%20Chestnut%20Street%2C%20Brooklyn" target="_blank" rel="noreferrer" className="inline-flex justify-center rounded-full bg-cafe-gold px-6 py-4 text-sm font-extrabold uppercase text-cafe-black transition hover:bg-cafe-orange">
+              Get Directions
+            </a>
+            <a href="https://rellscafecorner.com/contact-us" target="_blank" rel="noreferrer" className="inline-flex justify-center rounded-full border border-white/20 px-6 py-4 text-sm font-extrabold uppercase text-white transition hover:border-cafe-gold hover:text-cafe-gold">
+              Get in Touch
+            </a>
+          </div>
         </div>
       </div>
     </section>

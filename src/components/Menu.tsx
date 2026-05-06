@@ -1,20 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { menuCategories } from "@/lib/menuData";
 import MenuCategoryTabs from "./MenuCategoryTabs";
 import MenuItem from "./MenuItem";
 
 export default function Menu() {
+  const [activeId, setActiveId] = useState(menuCategories[0].id);
+
+  useEffect(() => {
+    const observers = menuCategories.map((category) => {
+      const element = document.getElementById(category.id);
+      if (!element) return null;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveId(category.id);
+        },
+        { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
+      );
+
+      observer.observe(element);
+      return observer;
+    });
+
+    return () => observers.forEach((observer) => observer?.disconnect());
+  }, []);
+
   return (
     <section id="menu" className="wood-grain py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
           <p className="mb-4 text-sm font-extrabold uppercase text-cafe-gold">Full Menu</p>
-          <h2 className="font-heading text-5xl uppercase leading-none text-white md:text-7xl">Made Fresh, Built To Crave</h2>
+          <h2 className="font-heading text-4xl uppercase leading-none text-white sm:text-5xl md:text-7xl">Made Fresh, Built To Crave</h2>
           <p className="mt-6 text-lg leading-8 text-cafe-cream/76">Breakfast, sandwiches, wings, sweets, and drinks with enough room to actually read what you want.</p>
         </div>
-        <MenuCategoryTabs categories={menuCategories} />
+        <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
 
         <div className="space-y-20 pt-14">
           {menuCategories.map((category) => (
@@ -32,6 +54,7 @@ export default function Menu() {
                   <h3 className="font-heading text-3xl uppercase text-white md:text-5xl">{category.label}</h3>
                   {category.note && <p className="mt-3 text-sm uppercase tracking-normal text-cafe-cream/58">{category.note}</p>}
                 </div>
+                <p className="text-sm font-bold uppercase text-cafe-gold/75">{category.items.length} items</p>
               </div>
               {category.banner && (
                 <div className="mb-6 rounded-2xl border border-cafe-gold/35 bg-cafe-gold/10 px-5 py-4 text-sm font-bold text-cafe-gold">

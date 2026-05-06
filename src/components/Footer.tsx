@@ -1,8 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = ["Menu", "Order Now", "About", "Reviews", "Contact Us", "Allergy Info"];
-const legalLinks = ["Terms & Conditions", "Privacy Policy"];
+const footerLinks = [
+  { label: "Menu", href: "#menu", external: false },
+  { label: "Order Now", href: "https://rellscafecorner.com/", external: true },
+  { label: "About", href: "#about", external: false },
+  { label: "Reviews", href: "https://rellscafecorner.com/reviews", external: true },
+  { label: "Contact Us", href: "#contact", external: false },
+  { label: "Allergy Info", href: "https://rellscafecorner.com/allergy-info", external: true },
+];
+const legalLinks = [
+  { label: "Terms & Conditions", href: "https://rellscafecorner.com/terms-and-conditions" },
+  { label: "Privacy Policy", href: "https://rellscafecorner.com/privacy-policy" },
+];
 
 export default function Footer() {
   return (
@@ -27,13 +37,19 @@ export default function Footer() {
           <h3 className="mb-4 font-heading uppercase text-cafe-gold">Links</h3>
           <div className="grid grid-cols-2 gap-3 text-sm text-cafe-cream/68">
             {footerLinks.map((link) => (
-              <Link key={link} href={link === "Menu" ? "#menu" : link === "About" ? "#about" : "https://rellscafecorner.com/"} className="transition hover:text-cafe-gold">
-                {link}
-              </Link>
+              link.external ? (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="transition hover:text-cafe-gold">
+                  {link.label}
+                </a>
+              ) : (
+                <Link key={link.label} href={link.href} className="transition hover:text-cafe-gold">
+                  {link.label}
+                </Link>
+              )
             ))}
           </div>
           <div className="mt-5 flex flex-wrap gap-4 text-xs text-cafe-cream/46">
-            {legalLinks.map((link) => <a key={link} href="https://rellscafecorner.com/" target="_blank" rel="noreferrer">{link}</a>)}
+            {legalLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="transition hover:text-cafe-gold">{link.label}</a>)}
           </div>
         </div>
         <div>

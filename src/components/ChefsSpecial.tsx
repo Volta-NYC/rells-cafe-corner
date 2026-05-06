@@ -7,14 +7,20 @@ const specials = [
   {
     name: "Salad",
     image: "https://assets.touch2success.com/static/c5da8c3b32b8cc9fc8d76de87e85ec0a/img/1718796543phpF0XrpM.png",
+    note: "Fresh greens, bold toppings",
+    fit: "object-contain p-8",
   },
   {
     name: "Avocado Toast",
     image: "https://assets.touch2success.com/static/b1cb275a788a9c10f60a93682b1e7039/img/1758984941php76hwJd.jpg",
+    note: "Creamy, crisp, breakfast-ready",
+    fit: "object-cover",
   },
   {
     name: "Macarons",
     image: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=900&q=80",
+    note: "Sweet bites for the table",
+    fit: "object-cover",
   },
 ];
 
@@ -35,12 +41,14 @@ export default function ChefsSpecial() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.55, delay: index * 0.08 }}
               whileHover={{ rotateX: 4, rotateY: -5, y: -8 }}
-              className="group rounded-[20px] border border-white/55 bg-white/[0.03] p-4 shadow-glow"
+              className="group rounded-[20px] border border-white/25 bg-white/[0.04] p-3 shadow-glow transition-colors hover:border-cafe-gold/70"
             >
-              <div className="relative h-72 overflow-hidden rounded-2xl bg-cafe-charcoal">
-                <Image src={item.image} alt={item.name} fill unoptimized className="object-cover transition duration-500 group-hover:scale-105" />
+              <div className="relative h-72 overflow-hidden rounded-2xl bg-[linear-gradient(145deg,#231d15,#111)]">
+                <Image src={item.image} alt={item.name} fill unoptimized className={`${item.fit} transition duration-500 group-hover:scale-105`} />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-cafe-black/80 to-transparent" />
               </div>
               <h3 className="mt-5 text-center font-heading text-2xl uppercase text-cafe-gold">{item.name}</h3>
+              <p className="mb-2 mt-2 text-center text-sm text-cafe-cream/62">{item.note}</p>
             </motion.article>
           ))}
         </div>

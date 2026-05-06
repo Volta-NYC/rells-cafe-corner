@@ -9,6 +9,7 @@ const links = [
   { label: "Home", href: "#home" },
   { label: "Menu", href: "#menu" },
   { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -16,8 +17,8 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-cafe-black/72 backdrop-blur-xl">
-      <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:px-8">
-        <Link href="#home" className="flex items-center gap-3" aria-label="Rell's Cafe Corner home">
+      <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between gap-4 px-5 md:px-8">
+        <Link href="#home" className="flex min-w-0 items-center gap-3" aria-label="Rell's Cafe Corner home">
           <Image
             src="https://assets.foodhub.com/static/adbe6939bc20dd710f84ec6592b783c9/img/1758998674phpUEl3iS.jpg"
             alt="Rell's Cafe Corner logo"
@@ -27,12 +28,12 @@ export default function Navbar() {
             className="h-12 w-12 rounded-full border-2 border-cafe-gold object-cover shadow-glow"
             priority
           />
-          <span className="font-heading text-sm uppercase tracking-normal text-white sm:text-lg">
+          <span className="max-w-[13rem] truncate font-heading text-sm uppercase tracking-normal text-white sm:max-w-none sm:text-lg">
             Rell's Cafe Corner
           </span>
         </Link>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-semibold uppercase text-cafe-cream/82 transition hover:text-cafe-gold">
               {link.label}

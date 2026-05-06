@@ -13,7 +13,10 @@ export default function HowItWorks() {
   return (
     <section className="bg-cafe-black py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <h2 className="mb-12 font-heading text-5xl uppercase text-white md:text-6xl">How It Works</h2>
+        <div className="mb-12 max-w-3xl">
+          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-gold">Order without the runaround</p>
+          <h2 className="font-heading text-4xl uppercase text-white sm:text-5xl md:text-6xl">How It Works</h2>
+        </div>
         <div className="grid gap-5 md:grid-cols-3">
           {steps.map((step, index) => {
             const Icon = step.icon;
@@ -24,7 +27,7 @@ export default function HowItWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="rounded-2xl border border-white/10 bg-white/[0.03] p-7"
+                className="rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-7"
               >
                 <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-cafe-gold/12 text-cafe-gold">
                   <Icon size={28} />
