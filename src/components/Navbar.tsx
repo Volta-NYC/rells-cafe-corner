@@ -1,9 +1,10 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useCart } from "@/lib/cart";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -14,6 +15,7 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { count, openCart } = useCart();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-cafe-black/72 backdrop-blur-xl">
@@ -39,25 +41,51 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://rellscafecorner.com/"
-            target="_blank"
-            rel="noreferrer"
+          <button
+            type="button"
+            onClick={openCart}
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white transition hover:border-cafe-gold hover:text-cafe-gold"
+            aria-label={`Open cart${count ? `, ${count} item${count === 1 ? "" : "s"}` : ""}`}
+          >
+            <ShoppingBag size={18} />
+            {count > 0 && (
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cafe-gold px-1 text-[10px] font-extrabold text-cafe-black">
+                {count}
+              </span>
+            )}
+          </button>
+          <Link
+            href="#menu"
             className="rounded-full bg-cafe-gold px-5 py-3 text-sm font-extrabold uppercase text-cafe-black transition hover:bg-cafe-orange"
           >
             Order Now
-          </a>
+          </Link>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen((value) => !value)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white md:hidden"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            type="button"
+            onClick={openCart}
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white"
+            aria-label={`Open cart${count ? `, ${count} item${count === 1 ? "" : "s"}` : ""}`}
+          >
+            <ShoppingBag size={18} />
+            {count > 0 && (
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cafe-gold px-1 text-[10px] font-extrabold text-cafe-black">
+                {count}
+              </span>
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white"
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -68,14 +96,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://rellscafecorner.com/"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              href="#menu"
+              onClick={() => setOpen(false)}
               className="mt-2 rounded-full bg-cafe-gold px-5 py-3 text-center text-sm font-extrabold uppercase text-cafe-black"
             >
               Order Now
-            </a>
+            </Link>
           </div>
         </div>
       )}

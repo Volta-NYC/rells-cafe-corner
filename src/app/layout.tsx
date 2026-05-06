@@ -1,4 +1,6 @@
 import "./globals.css"
+import CartDrawer from "@/components/CartDrawer"
+import { CartProvider } from "@/lib/cart"
 
 export const metadata = {
   title: "Rell's Cafe Corner | Cherylles Kitchen LLC",
@@ -12,8 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-cafe-black font-body text-cafe-cream antialiased">
-        {children}
+      <body className="min-h-screen bg-cafe-bg font-body text-cafe-ink antialiased">
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
       </body>
     </html>
   )

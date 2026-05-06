@@ -6,11 +6,17 @@ const config: Config = {
     extend: {
       colors: {
         cafe: {
-          black: "#0A0A0A",
-          charcoal: "#1A1A1A",
-          gold: "#D4A853",
-          cream: "#F5F2EA",
-          orange: "#E87A2F",
+          ink: "#0A0A0A",
+          inkSoft: "#1F2937",
+          muted: "#6B7280",
+          subtle: "#9CA3AF",
+          line: "#E5E7EB",
+          surface: "#FFFFFF",
+          bg: "#F7F7F5",
+          tint: "#FCE4E4",
+          tintSoft: "#FFF1F1",
+          rose: "#E85A6F",
+          roseDeep: "#C53D52",
           sage: "#8BAF7F",
         },
       },
@@ -19,7 +25,9 @@ const config: Config = {
         body: ["var(--font-body)", "DM Sans", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 40px rgba(212, 168, 83, 0.22)",
+        soft: "0 12px 40px -24px rgba(15, 23, 42, 0.20)",
+        glow: "0 18px 48px -22px rgba(232, 90, 111, 0.35)",
+        card: "0 1px 0 rgba(15,23,42,0.04), 0 8px 24px -16px rgba(15,23,42,0.18)",
       },
     },
   },
