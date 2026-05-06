@@ -9,8 +9,24 @@ export default function AppDownload() {
           <h2 className="font-heading text-4xl uppercase text-cafe-ink sm:text-5xl md:text-6xl">Download Our App</h2>
           <p className="mt-4 text-lg text-cafe-inkSoft/80">Get exclusive discounts and a smooth ordering experience</p>
           <div className="mt-7 flex flex-wrap gap-4">
-            <Image src="/images/appstore.svg" alt="Download on the App Store" width={164} height={50} />
-            <Image src="/images/playstore.svg" alt="Get it on Google Play" width={164} height={50} />
+            <a
+              href="https://apps.apple.com/us/app/cherylles-kitchen-llc/id6753680663"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download on the App Store"
+              className="transition hover:opacity-85"
+            >
+              <Image src="/images/appstore.svg" alt="Download on the App Store" width={164} height={50} />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.fh885262"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Get it on Google Play"
+              className="transition hover:opacity-85"
+            >
+              <Image src="/images/playstore.svg" alt="Get it on Google Play" width={164} height={50} />
+            </a>
           </div>
         </div>
         <div className="relative mx-auto h-[430px] w-[220px] rounded-[2rem] border border-cafe-line bg-white p-3 shadow-soft">

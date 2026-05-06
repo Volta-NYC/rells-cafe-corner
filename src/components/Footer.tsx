@@ -55,8 +55,24 @@ export default function Footer() {
           <h3 className="mb-4 font-heading uppercase text-cafe-rose">Accepted Here</h3>
           <p className="text-sm text-cafe-inkSoft/85">Visa, MasterCard, Visa Electron, AmEx</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Image src="/images/appstore.svg" alt="Download on the App Store" width={128} height={39} />
-            <Image src="/images/playstore.svg" alt="Get it on Google Play" width={128} height={39} />
+            <a
+              href="https://apps.apple.com/us/app/cherylles-kitchen-llc/id6753680663"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Download on the App Store"
+              className="transition hover:opacity-85"
+            >
+              <Image src="/images/appstore.svg" alt="Download on the App Store" width={128} height={39} />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.fh885262"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Get it on Google Play"
+              className="transition hover:opacity-85"
+            >
+              <Image src="/images/playstore.svg" alt="Get it on Google Play" width={128} height={39} />
+            </a>
           </div>
         </div>
       </div>
