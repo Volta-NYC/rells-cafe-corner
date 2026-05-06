@@ -2,11 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@800&display=swap");
+
+:root {
+  --font-heading: "Montserrat";
+  --font-body: "DM Sans";
+}
+
 html, body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
+  background: #0A0A0A;
 }
 
 * {
   box-sizing: border-box;
+}
+
+::selection {
+  background: #D4A853;
+  color: #0A0A0A;
+}
+
+.wood-grain {
+  background-color: #0A0A0A;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.86), rgba(10, 10, 10, 0.9)),
+    url("https://public.touch2success.com/static/c5da8c3b32b8cc9fc8d76de87e85ec0a/img/1680172992phpP7mS2x.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.saucy-glow {
+  color: #D4A853;
+  text-shadow:
+    0 0 16px rgba(232, 122, 47, 0.75),
+    0 0 36px rgba(212, 168, 83, 0.5);
+  animation: saucyPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes saucyPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(232, 122, 47, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 26px rgba(232, 122, 47, 0.95));
+  }
 }

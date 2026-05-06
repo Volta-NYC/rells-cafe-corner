@@ -1,10 +1,8 @@
 import "./globals.css"
-import Navbar from "@/lib/components/navbar"
-import Footer from "@/lib/components/footer"
 
 export const metadata = {
-  title: "Business Name",
-  description: "Short description of the business."
+  title: "Rell's Cafe Corner | Cherylles Kitchen LLC",
+  description: "Brooklyn cafe serving sandwiches, breakfast, salads, wings, desserts, and drinks from 276 Chestnut Street."
 }
 
 export default function RootLayout({
@@ -14,12 +12,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto px-6 py-12">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-screen bg-cafe-black font-body text-cafe-cream antialiased">
+        {children}
       </body>
     </html>
   )
