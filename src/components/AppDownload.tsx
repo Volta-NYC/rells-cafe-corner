@@ -5,7 +5,7 @@ export default function AppDownload() {
     <section className="overflow-hidden bg-[linear-gradient(135deg,#1A1A1A,#0A0A0A_55%,#24170d)] py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 md:grid-cols-[1fr_320px] md:px-8">
         <div>
-          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-gold">Rell's on the go</p>
+          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-gold">Rell&apos;s on the go</p>
           <h2 className="font-heading text-4xl uppercase text-white sm:text-5xl md:text-6xl">Download Our App</h2>
           <p className="mt-4 text-lg text-cafe-cream/72">Get exclusive discounts and a smooth ordering experience</p>
           <div className="mt-7 flex flex-wrap gap-4">
@@ -25,7 +25,7 @@ export default function AppDownload() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-cafe-black to-transparent" />
-              <p className="absolute bottom-4 left-4 font-heading text-xl uppercase text-white">Order Rell's</p>
+              <p className="absolute bottom-4 left-4 font-heading text-xl uppercase text-white">Order Rell&apos;s</p>
             </div>
             <div className="space-y-3 p-4">
               {["Turkey & Avocado", "Chicken & Waffles", "Blueberry Basil"].map((item) => (

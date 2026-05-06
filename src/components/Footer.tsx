@@ -28,9 +28,9 @@ export default function Footer() {
               unoptimized
               className="h-12 w-12 rounded-full border border-cafe-gold object-cover"
             />
-            <span className="font-heading text-lg uppercase text-white">Rell's Cafe Corner</span>
+            <span className="font-heading text-lg uppercase text-white">Rell&apos;s Cafe Corner</span>
           </div>
-          <p className="mt-5 text-cafe-cream/66">Brooklyn's Favorite Cafe - 276 Chestnut Street</p>
+          <p className="mt-5 text-cafe-cream/66">Brooklyn&apos;s Favorite Cafe - 276 Chestnut Street</p>
           <p className="mt-4 text-sm text-cafe-cream/46">© 2026 Cherylles Kitchen LLC</p>
         </div>
         <div>

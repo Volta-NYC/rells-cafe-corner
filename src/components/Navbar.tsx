@@ -29,7 +29,7 @@ export default function Navbar() {
             priority
           />
           <span className="max-w-[13rem] truncate font-heading text-sm uppercase tracking-normal text-white sm:max-w-none sm:text-lg">
-            Rell's Cafe Corner
+            Rell&apos;s Cafe Corner
           </span>
         </Link>
 

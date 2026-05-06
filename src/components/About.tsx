@@ -41,7 +41,7 @@ export default function About() {
           <p className="mb-4 text-sm font-extrabold uppercase text-cafe-gold">Cherylles Kitchen LLC</p>
           <h2 className="font-heading text-5xl uppercase text-white md:text-7xl">About Us</h2>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-cafe-cream/82">
-            We know life gets busy, and that's why we make food easy! Whether you're on your lunch break, heading home after work, or planning a cozy night in, Cherylles Kitchen LLC in Brooklyn offers a variety of freshly prepared meals that are ready in minutes. From gourmet sandwiches to crispy wings, enjoy top-quality meals without breaking the bank.
+            We know life gets busy, and that&apos;s why we make food easy! Whether you&apos;re on your lunch break, heading home after work, or planning a cozy night in, Cherylles Kitchen LLC in Brooklyn offers a variety of freshly prepared meals that are ready in minutes. From gourmet sandwiches to crispy wings, enjoy top-quality meals without breaking the bank.
           </p>
           <a
             href="https://rellscafecorner.com/"

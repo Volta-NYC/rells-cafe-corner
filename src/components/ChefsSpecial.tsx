@@ -29,7 +29,7 @@ export default function ChefsSpecial() {
     <section className="bg-[radial-gradient(circle_at_top,#332313_0%,#111_42%,#0A0A0A_100%)] py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <h2 className="font-heading text-5xl uppercase text-white md:text-7xl">Chef's Special</h2>
+          <h2 className="font-heading text-5xl uppercase text-white md:text-7xl">Chef&apos;s Special</h2>
           <p className="max-w-md text-cafe-cream/70">Big flavor, fresh texture, and the cafe favorites worth slowing down for.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">

@@ -32,7 +32,7 @@ export default function Hero() {
           <span className="saucy-glow block">saucy?</span>
         </h1>
         <p className="mt-7 max-w-2xl text-lg leading-8 text-cafe-cream/88 sm:text-2xl">
-          Brooklyn's favorite cafe. Sandwiches, breakfast & more - delivered in 30 minutes.
+          Brooklyn&apos;s favorite cafe. Sandwiches, breakfast & more - delivered in 30 minutes.
         </p>
         <div className="mt-9 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
           <Link href="#menu" className="w-full rounded-full bg-cafe-gold px-7 py-4 text-center text-sm font-extrabold uppercase text-cafe-black transition hover:bg-cafe-orange sm:w-auto">
