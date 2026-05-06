@@ -11,11 +11,11 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="bg-cafe-black py-24">
+    <section className="bg-cafe-bg py-24">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
-          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-gold">Order without the runaround</p>
-          <h2 className="font-heading text-4xl uppercase text-white sm:text-5xl md:text-6xl">How It Works</h2>
+          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-rose">Order without the runaround</p>
+          <h2 className="font-heading text-4xl uppercase text-cafe-ink sm:text-5xl md:text-6xl">How It Works</h2>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {steps.map((step, index) => {
@@ -27,13 +27,13 @@ export default function HowItWorks() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
-                className="rounded-2xl border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-7"
+                className="rounded-2xl border border-cafe-line bg-white p-7 shadow-card"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-cafe-gold/12 text-cafe-gold">
+                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-cafe-tint text-cafe-roseDeep">
                   <Icon size={28} />
                 </div>
-                <h3 className="font-heading text-2xl uppercase text-white">{step.title}</h3>
-                <p className="mt-4 leading-7 text-cafe-cream/68">{step.text}</p>
+                <h3 className="font-heading text-2xl uppercase text-cafe-ink">{step.title}</h3>
+                <p className="mt-4 leading-7 text-cafe-muted">{step.text}</p>
               </motion.article>
             );
           })}

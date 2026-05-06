@@ -29,12 +29,12 @@ export default function Menu() {
   }, []);
 
   return (
-    <section id="menu" className="wood-grain py-24 md:py-32">
+    <section id="menu" className="bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="mb-12 max-w-3xl">
-          <p className="mb-4 text-sm font-extrabold uppercase text-cafe-gold">Full Menu</p>
-          <h2 className="font-heading text-4xl uppercase leading-none text-white sm:text-5xl md:text-7xl">Made Fresh, Built To Crave</h2>
-          <p className="mt-6 text-lg leading-8 text-cafe-cream/76">Breakfast, sandwiches, wings, sweets, and drinks with enough room to actually read what you want.</p>
+          <p className="mb-4 text-sm font-extrabold uppercase text-cafe-rose">Full Menu</p>
+          <h2 className="font-heading text-4xl uppercase leading-none text-cafe-ink sm:text-5xl md:text-7xl">Made Fresh, Built To Crave</h2>
+          <p className="mt-6 text-lg leading-8 text-cafe-inkSoft/80">Breakfast, sandwiches, wings, sweets, and drinks with enough room to actually read what you want.</p>
         </div>
         <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
 
@@ -49,15 +49,15 @@ export default function Menu() {
               transition={{ duration: 0.55 }}
               className="scroll-mt-40"
             >
-              <div className="mb-7 flex flex-col justify-between gap-3 border-b border-white/12 pb-5 md:flex-row md:items-end">
+              <div className="mb-7 flex flex-col justify-between gap-3 border-b border-cafe-line pb-5 md:flex-row md:items-end">
                 <div>
-                  <h3 className="font-heading text-3xl uppercase text-white md:text-5xl">{category.label}</h3>
-                  {category.note && <p className="mt-3 text-sm uppercase tracking-normal text-cafe-cream/58">{category.note}</p>}
+                  <h3 className="font-heading text-3xl uppercase text-cafe-ink md:text-5xl">{category.label}</h3>
+                  {category.note && <p className="mt-3 text-sm uppercase tracking-normal text-cafe-muted">{category.note}</p>}
                 </div>
-                <p className="text-sm font-bold uppercase text-cafe-gold/75">{category.items.length} items</p>
+                <p className="text-sm font-bold uppercase text-cafe-rose/85">{category.items.length} items</p>
               </div>
               {category.banner && (
-                <div className="mb-6 rounded-2xl border border-cafe-gold/35 bg-cafe-gold/10 px-5 py-4 text-sm font-bold text-cafe-gold">
+                <div className="mb-6 rounded-2xl border border-cafe-rose/30 bg-cafe-tint px-5 py-4 text-sm font-bold text-cafe-roseDeep">
                   {category.banner}
                 </div>
               )}
