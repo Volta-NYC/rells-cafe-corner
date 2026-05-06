@@ -8,6 +8,7 @@ export type CartLine = {
   unitPrice: number;
   priceLabel: string;
   qty: number;
+  options?: string[];
 };
 
 type CartContextValue = {

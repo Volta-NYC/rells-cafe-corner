@@ -149,7 +149,12 @@ export default function CheckoutPage() {
                   <li key={line.id} className="flex items-center justify-between gap-3 py-3">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm font-extrabold text-cafe-sage">{line.qty}x</span>
-                      <span className="font-semibold text-cafe-ink">{line.name}</span>
+                      <div className="min-w-0">
+                        <span className="font-semibold text-cafe-ink">{line.name}</span>
+                        {line.options && line.options.length > 0 && (
+                          <p className="mt-0.5 text-xs text-cafe-muted">{line.options.join(", ")}</p>
+                        )}
+                      </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="font-heading text-sm uppercase text-cafe-ink">

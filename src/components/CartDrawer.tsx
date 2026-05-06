@@ -79,7 +79,10 @@ export default function CartDrawer() {
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
                           <p className="font-semibold leading-snug text-cafe-ink">{line.name}</p>
-                          <p className="mt-1 text-xs uppercase text-cafe-muted">{line.priceLabel} each</p>
+                          {line.options && line.options.length > 0 && (
+                            <p className="mt-1 text-xs leading-5 text-cafe-muted">{line.options.join(", ")}</p>
+                          )}
+                          <p className="mt-1 text-xs uppercase text-cafe-muted">${line.unitPrice.toFixed(2)} each</p>
                         </div>
                         <button
                           type="button"

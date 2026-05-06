@@ -1,8 +1,22 @@
+export type OptionChoice = {
+  name: string;
+  price?: number;
+};
+
+export type OptionGroup = {
+  id: string;
+  label: string;
+  type: "single" | "multi";
+  required?: boolean;
+  choices: OptionChoice[];
+};
+
 export type MenuItem = {
   name: string;
   description?: string;
   price: string;
   addOn?: string;
+  options?: OptionGroup[];
 };
 
 export type MenuCategory = {
@@ -19,9 +33,67 @@ export const menuCategories: MenuCategory[] = [
     label: "All Day Breakfast",
     note: "Please contact the takeaway for choice of breads.",
     items: [
-      { name: "Bagels", price: "$2.00", description: "Classic morning staple, ready for your favorite spread." },
-      { name: "Avocado Toast", price: "$4.75", description: "Fresh avocado over crisp toast." },
-      { name: "Mini Pancakes", price: "$7.00", description: "Soft, golden pancakes for breakfast any time." },
+      {
+        name: "Bagels",
+        price: "$2.00",
+        description: "Choose a selection of soft delicious breads. Add: cream cheese, butter or jelly: $0.50",
+        options: [
+          {
+            id: "bagel-flavour",
+            label: "Please select your flavour",
+            type: "single",
+            required: true,
+            choices: [{ name: "Plain" }, { name: "Cinnamon" }, { name: "Everything" }],
+          },
+          {
+            id: "bagel-extras",
+            label: "Please select extras",
+            type: "multi",
+            choices: [
+              { name: "Cream Cheese", price: 0.5 },
+              { name: "Butter", price: 0.5 },
+              { name: "Jelly", price: 0.5 },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Avocado Toast",
+        price: "$4.75",
+        description:
+          "Thinly sliced avocado seasoned to perfection and seasoned with honey & balsamic glaze on your choice of 1 slice of bread. Add: bacon, egg or strawberry and feta $1.25 each.",
+        options: [
+          {
+            id: "avocado-toast-extras",
+            label: "Please select extras",
+            type: "multi",
+            choices: [
+              { name: "Bacon", price: 1.25 },
+              { name: "Egg", price: 1.25 },
+              { name: "Strawberry And Feta", price: 1.25 },
+              { name: "Slice Of Avocado", price: 4.0 },
+            ],
+          },
+        ],
+      },
+      {
+        name: "Mini Pancakes",
+        price: "$7.00",
+        description:
+          "Light & fluffy mini pancakes served with powdered sugar, fresh fruit & whipped cream. Add: bacon $3.00, eggs $2.50 bacon & eggs $5.00.",
+        options: [
+          {
+            id: "mini-pancakes-extra",
+            label: "Please select extra",
+            type: "multi",
+            choices: [
+              { name: "Bacon", price: 3.0 },
+              { name: "Eggs", price: 2.5 },
+              { name: "Bacon & Eggs", price: 5.0 },
+            ],
+          },
+        ],
+      },
       { name: "Croissant Lovers Sandwich", price: "$7.50", description: "Flaky croissant stacked cafe-style." },
       { name: "B.L.T. Sandwich", price: "$6.95", description: "Bacon, lettuce, and tomato on your bread choice." },
       { name: "Chicken & Waffles", price: "$13.95", description: "Crispy chicken with warm waffles." },
