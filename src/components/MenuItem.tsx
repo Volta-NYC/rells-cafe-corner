@@ -28,6 +28,17 @@ export default function MenuItem({ item }: { item: MenuItemType }) {
         className="group relative w-full overflow-hidden rounded-2xl border border-cafe-line bg-white p-5 text-left shadow-card transition duration-300 hover:-translate-y-1 hover:border-cafe-rose/50 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
       >
         <span className="absolute inset-y-5 left-0 w-1 rounded-r-full bg-cafe-rose/35 transition group-hover:bg-cafe-rose" />
+        {item.image && (
+          <div className="relative mb-3 aspect-[4/3] w-full overflow-hidden rounded-xl bg-cafe-bg">
+            <Image
+              src={item.image}
+              alt={item.name}
+              fill
+              className="object-cover"
+              sizes="(max-width: 640px) 100vw, 320px"
+            />
+          </div>
+        )}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-5">
           <div className="min-w-0 pl-2">
             <h3 className="text-lg font-extrabold leading-snug text-cafe-ink sm:text-xl">{item.name}</h3>
