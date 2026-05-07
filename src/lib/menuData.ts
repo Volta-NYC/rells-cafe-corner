@@ -15,6 +15,7 @@ export type MenuItem = {
   name: string;
   description?: string;
   price: string;
+  image?: string;
   addOn?: string;
   subCategory?: string;
   options?: OptionGroup[];
@@ -27,6 +28,8 @@ export type MenuCategory = {
   banner?: string;
   items: MenuItem[];
 };
+
+const PLACEHOLDER = "/images/menu/placeholder.svg";
 
 const comboOption: OptionGroup = {
   id: "combo-option",
