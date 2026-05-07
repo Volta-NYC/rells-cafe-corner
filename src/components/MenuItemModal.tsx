@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import { Minus, Plus, X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { makeItemId, parsePrice, useCart } from "@/lib/cart";
