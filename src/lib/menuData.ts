@@ -138,6 +138,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Bagels",
         price: "$2.00",
+        image: PLACEHOLDER,
         description: "Choose a selection of soft delicious breads. Add: cream cheese, butter or jelly: $0.50.",
         options: [
           {
@@ -162,6 +163,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Avocado Toast",
         price: "$4.75",
+        image: PLACEHOLDER,
         description:
           "Thinly sliced avocado seasoned to perfection and seasoned with honey and balsamic glaze on your choice of 1 slice of bread. Add: bacon, egg or strawberry and feta $1.25 each.",
         options: [
@@ -181,6 +183,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Mini Pancakes",
         price: "$7.00",
+        image: PLACEHOLDER,
         description:
           "Light and fluffy mini pancakes served with powdered sugar, fresh fruit and whipped cream. Add: bacon $3.00, eggs $2.50 bacon and eggs $5.00.",
         options: [
@@ -199,6 +202,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Croissant Lovers Sandwich",
         price: "$7.50",
+        image: PLACEHOLDER,
         description:
           "Your Choice of sliced ham or turkey and cheese toasted with honey on a croissant. Add: lettuce $0.25, tomatoes $0.50, avocado $1.25.",
         options: [
@@ -224,6 +228,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "B.L.T. Sandwich",
         price: "$6.95",
+        image: PLACEHOLDER,
         description:
           "(bacon lettuce tomatoes) bacon with lettuce and tomatoes on a roll with mayo. Add: avocado $1.25, Add Bacon: $1.75, Mixed Fruits (Watermelon, Grapes, Pineapple, Strawberry): $5.00.",
         options: [
@@ -242,11 +247,13 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Chicken And Waffles",
         price: "$13.95",
+        image: PLACEHOLDER,
         description: "Crispy chicken bites with 2 waffles paired with fresh fruit and powdered sugar honey and syrup.",
       },
       {
         name: "Small Assorted Egg Sandwiches",
         price: "$6.00",
+        image: PLACEHOLDER,
         description: "Eggs and cheese, bacon and egg and cheese. Add: avocado $1.25.",
         options: [
           {
@@ -263,16 +270,19 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Yogurt Fruit Parfait",
         price: "$3.75",
+        image: PLACEHOLDER,
         description: "Vanilla yogurt with berries and granola and honey.",
       },
       {
         name: "Large Yogurt Fruit Parfait",
         price: "$5.50",
+        image: PLACEHOLDER,
         description: "Vanilla yogurt with berries and granola and honey.",
       },
       {
         name: "Muffins",
         price: "$2.00",
+        image: PLACEHOLDER,
         description: "Add: cream cheese, butter or jelly: $0.50.",
         options: [
           {
@@ -297,6 +307,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Croissants",
         price: "$2.25",
+        image: PLACEHOLDER,
         description: "Add: cream cheese, butter or jelly: $0.50.",
         options: [
           {
@@ -322,6 +333,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "The Turkey And Avocado Sandwich",
         price: "$8.50",
+        image: PLACEHOLDER,
         description:
           "Turkey, avocado, lettuce, tomato and pesto dressing on texas toast. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -333,6 +345,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Turkey Club With Bacon Sandwich",
         price: "$9.50",
+        image: PLACEHOLDER,
         description:
           "Turkey, cheese, bacon, lettuce, tomatoes and mayo on texas toast. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -344,6 +357,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Grilled Chicken Caesar Wrap",
         price: "$9.00",
+        image: PLACEHOLDER,
         description:
           "Grilled chicken, romaine lettuce, parmesan cheese, crushed croutons and caesar dressing. Make It Crispy Chicken +$1.00. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -375,6 +389,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "The Jerk Chicken Sandwich",
         price: "$10.50",
+        image: PLACEHOLDER,
         description:
           "House jerk chicken stacked on top of a sweet plantains and a cabbage slaw served with a side of mango salsa and plantain chips. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -386,6 +401,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "The Italian Chicken Sandwich",
         price: "$9.50",
+        image: PLACEHOLDER,
         description:
           "Thinly sliced marinated chicken breast, mozzarella, lettuce, tomato, fresh basil and drizzled with balsamic glaze on brioche bun. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -397,6 +413,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "House Tuna Sandwich",
         price: "$7.75",
+        image: PLACEHOLDER,
         description:
           "House made tuna on multigrain bread with lettuce and tomatoes with a light drizzle of honey and balsamic glaze. Make It A Tuna Melt: $0.85. Add Cheese: $1.25. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -417,6 +434,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Veggie And Hummus Wrap",
         price: "$9.00",
+        image: PLACEHOLDER,
         description:
           "Cucumbers, carrots, tomatoes, avocado, hummus and spring mix lettuce with balsamic glaze inside a wrap. Add: Avocado $1.25 Bacon $1.75.",
         options: [
@@ -442,6 +460,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Egg Sandwich",
         price: "$5.25",
+        image: PLACEHOLDER,
         description: "Add on for Bacon: $1.75.",
         options: [
           { ...baconExtra },
@@ -452,6 +471,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Egg And Cheese Sandwich",
         price: "$6.10",
+        image: PLACEHOLDER,
         description: "Add on for Bacon: $1.75.",
         options: [
           { ...baconExtra },
@@ -462,6 +482,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Bacon, Egg, And Cheese Sandwich",
         price: "$6.95",
+        image: PLACEHOLDER,
         description: "Add on for Bacon: $1.75.",
         options: [
           { ...baconExtra },
@@ -478,11 +499,13 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Jerk Chicken Salad",
         price: "$14.50",
+        image: PLACEHOLDER,
         description: "House jerk chicken, cabbage, tomatoes, carrots, cucumber and mangoes.",
       },
       {
         name: "Chicken Caesar Salad",
         price: "$13.00",
+        image: PLACEHOLDER,
         description: "Grilled or crispy chicken, crushed croutons, parmesan cheese and dressing.",
         options: [
           {
@@ -497,11 +520,13 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "The Chicken And Avocado Salad",
         price: "$14.75",
+        image: PLACEHOLDER,
         description: "Grilled chicken, carrots, cucumbers, tomatoes, craisins, walnuts and avocado.",
       },
       {
         name: "Chicken Wings",
         price: "$12.75",
+        image: PLACEHOLDER,
         description: "Flavours: Plain, honey garlic, mango jerk, bbq, buffalo, lemon pepper.",
         options: [
           {
@@ -526,9 +551,9 @@ export const menuCategories: MenuCategory[] = [
           },
         ],
       },
-      { name: "French Fries", price: "$3.50" },
-      { name: "Sweet Plantains", price: "$3.50" },
-      { name: "Bacon", price: "$3.50" },
+      { name: "French Fries", price: "$3.50", image: PLACEHOLDER },
+      { name: "Sweet Plantains", price: "$3.50", image: PLACEHOLDER },
+      { name: "Bacon", price: "$3.50", image: PLACEHOLDER },
     ],
   },
   {
@@ -539,26 +564,31 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Kids Grilled Cheese",
         price: "$6.50",
+        image: PLACEHOLDER,
         options: [kidsExtras, kidsOption],
       },
       {
         name: "Kids Peanut Butter And Jelly",
         price: "$6.50",
+        image: PLACEHOLDER,
         options: [kidsExtras, kidsOption],
       },
       {
         name: "Kids Turkey With Lettuce",
         price: "$6.50",
+        image: PLACEHOLDER,
         options: [kidsExtras, kidsOption],
       },
       {
         name: "Kids Ham, Cheese With Lettuce",
         price: "$6.50",
+        image: PLACEHOLDER,
         options: [kidsExtras, kidsOption],
       },
       {
         name: "Kids Nutella On Toast",
         price: "$6.50",
+        image: PLACEHOLDER,
         options: [kidsExtras, kidsOption],
       },
     ],
@@ -567,14 +597,14 @@ export const menuCategories: MenuCategory[] = [
     id: "desserts",
     label: "Desserts",
     items: [
-      { name: "Chocolate Chip Cookie", price: "$2.00" },
-      { name: "White Chocolate Macadamia Nut Cookie", price: "$2.00" },
-      { name: "Macarons", price: "$2.00", description: "Assorted flavors." },
-      { name: "Lemon Raspberry Cupcake", price: "$3.50", subCategory: "Cupcakes" },
-      { name: "Chocolate Cupcake", price: "$3.50", subCategory: "Cupcakes" },
-      { name: "Vanilla Cupcake", price: "$3.50", subCategory: "Cupcakes" },
-      { name: "Strawberry Cupcake", price: "$3.50", subCategory: "Cupcakes" },
-      { name: "Red Velvet Cupcake", price: "$3.50", subCategory: "Cupcakes" },
+      { name: "Chocolate Chip Cookie", price: "$2.00", image: PLACEHOLDER },
+      { name: "White Chocolate Macadamia Nut Cookie", price: "$2.00", image: PLACEHOLDER },
+      { name: "Macarons", price: "$2.00", image: PLACEHOLDER, description: "Assorted flavors." },
+      { name: "Lemon Raspberry Cupcake", price: "$3.50", image: PLACEHOLDER, subCategory: "Cupcakes" },
+      { name: "Chocolate Cupcake", price: "$3.50", image: PLACEHOLDER, subCategory: "Cupcakes" },
+      { name: "Vanilla Cupcake", price: "$3.50", image: PLACEHOLDER, subCategory: "Cupcakes" },
+      { name: "Strawberry Cupcake", price: "$3.50", image: PLACEHOLDER, subCategory: "Cupcakes" },
+      { name: "Red Velvet Cupcake", price: "$3.50", image: PLACEHOLDER, subCategory: "Cupcakes" },
     ],
   },
   {
@@ -584,6 +614,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Hot Coffee",
         price: "$1.25",
+        image: PLACEHOLDER,
         subCategory: "Hot Coffee",
         options: [
           {
@@ -605,6 +636,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Large Hot Coffee",
         price: "$2.25",
+        image: PLACEHOLDER,
         subCategory: "Hot Coffee",
         options: [
           {
@@ -626,6 +658,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Hot Tea",
         price: "$1.25",
+        image: PLACEHOLDER,
         subCategory: "Hot Tea",
         options: [
           {
@@ -649,6 +682,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Large Hot Tea",
         price: "$2.25",
+        image: PLACEHOLDER,
         subCategory: "Hot Tea",
         options: [
           {
@@ -672,6 +706,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Honey Citrus Ginger Tea",
         price: "$1.25",
+        image: PLACEHOLDER,
         subCategory: "Honey Citrus Ginger Tea",
         options: [
           {
@@ -688,6 +723,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Large Honey Citrus Ginger Tea",
         price: "$2.75",
+        image: PLACEHOLDER,
         subCategory: "Honey Citrus Ginger Tea",
         options: [
           {
@@ -704,6 +740,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Matcha Latte",
         price: "$3.75",
+        image: PLACEHOLDER,
         subCategory: "Matcha Latte",
         options: [
           {
@@ -722,6 +759,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Large Matcha Latte",
         price: "$4.75",
+        image: PLACEHOLDER,
         subCategory: "Matcha Latte",
         options: [
           {
@@ -740,6 +778,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Small Hot Chocolate",
         price: "$1.50",
+        image: PLACEHOLDER,
         subCategory: "Hot Chocolate",
         options: [
           { ...smallMilkChoice },
@@ -749,6 +788,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Large Hot Chocolate",
         price: "$2.50",
+        image: PLACEHOLDER,
         subCategory: "Hot Chocolate",
         options: [
           { ...smallMilkChoice },
@@ -764,6 +804,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "15oz Iced Coffee",
         price: "$3.50",
+        image: PLACEHOLDER,
         options: [
           {
             id: "iced-coffee-flavor",
@@ -780,6 +821,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "15oz Iced Tea",
         price: "$3.00",
+        image: PLACEHOLDER,
         options: [
           {
             id: "iced-tea-choice",
@@ -803,6 +845,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "15oz Lemonades",
         price: "$4.25",
+        image: PLACEHOLDER,
         options: [
           {
             id: "lemonade-flavor",
@@ -819,6 +862,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "15oz Blueberry Basil Lemonade Fruit Smoothie",
         price: "$4.50",
+        image: PLACEHOLDER,
         options: [
           {
             id: "smoothie-flavor",
