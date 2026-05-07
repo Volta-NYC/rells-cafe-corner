@@ -16,6 +16,7 @@ export type MenuItem = {
   description?: string;
   price: string;
   addOn?: string;
+  subCategory?: string;
   options?: OptionGroup[];
 };
 
@@ -36,7 +37,7 @@ export const menuCategories: MenuCategory[] = [
       {
         name: "Bagels",
         price: "$2.00",
-        description: "Choose a selection of soft delicious breads. Add: cream cheese, butter or jelly: $0.50",
+        description: "Choose a selection of soft delicious breads. Add: cream cheese, butter, or jelly: $0.50.",
         options: [
           {
             id: "bagel-flavour",
@@ -61,7 +62,7 @@ export const menuCategories: MenuCategory[] = [
         name: "Avocado Toast",
         price: "$4.75",
         description:
-          "Thinly sliced avocado seasoned to perfection and seasoned with honey & balsamic glaze on your choice of 1 slice of bread. Add: bacon, egg or strawberry and feta $1.25 each.",
+          "Thinly sliced avocado seasoned to perfection with honey & balsamic glaze on your choice of 1 slice of bread. Add: bacon, egg, or strawberry and feta $1.25 each.",
         options: [
           {
             id: "avocado-toast-extras",
@@ -80,7 +81,7 @@ export const menuCategories: MenuCategory[] = [
         name: "Mini Pancakes",
         price: "$7.00",
         description:
-          "Light & fluffy mini pancakes served with powdered sugar, fresh fruit & whipped cream. Add: bacon $3.00, eggs $2.50 bacon & eggs $5.00.",
+          "Light & fluffy mini pancakes served with powdered sugar, fresh fruit & whipped cream. Add: bacon $3.00, eggs $2.50, bacon & eggs $5.00.",
         options: [
           {
             id: "mini-pancakes-extra",
@@ -94,75 +95,174 @@ export const menuCategories: MenuCategory[] = [
           },
         ],
       },
-      { name: "Croissant Lovers Sandwich", price: "$7.50", description: "Flaky croissant stacked cafe-style." },
-      { name: "B.L.T. Sandwich", price: "$6.95", description: "Bacon, lettuce, and tomato on your bread choice." },
-      { name: "Chicken & Waffles", price: "$13.95", description: "Crispy chicken with warm waffles." },
-      { name: "Small Assorted Egg Sandwiches", price: "$6.00", description: "Breakfast sandwich made simple and satisfying." },
-      { name: "Small Yogurt Fruit Parfait", price: "$3.75", description: "Layered yogurt and fruit." },
-      { name: "Large Yogurt Fruit Parfait", price: "$5.50", description: "A bigger cup of yogurt and fruit." },
-      { name: "Muffins", price: "$2.00", description: "Bakery-style muffin selection." },
-      { name: "Croissants", price: "$2.25", description: "Buttery, flaky croissants." },
+      {
+        name: "Croissant Lovers Sandwich",
+        price: "$7.50",
+        description:
+          "Your choice of sliced ham or turkey & cheese, toasted with honey on a croissant. Add: lettuce $0.25, tomatoes $0.50, avocado $1.25.",
+      },
+      {
+        name: "B.L.T. Sandwich",
+        price: "$6.95",
+        description:
+          "Bacon, lettuce, and tomatoes on a roll with mayo. Add: avocado $1.25, extra bacon $1.75, mixed fruits (watermelon, grapes, pineapple, strawberry) $5.00.",
+      },
+      {
+        name: "Chicken & Waffles",
+        price: "$13.95",
+        description: "Crispy chicken bites with 2 waffles, paired with fresh fruit, powdered sugar, honey & syrup.",
+      },
+      {
+        name: "Small Assorted Egg Sandwiches",
+        price: "$6.00",
+        description: "Egg & cheese, or bacon, egg & cheese. Add: avocado $1.25.",
+      },
+      {
+        name: "Small Yogurt Fruit Parfait",
+        price: "$3.75",
+        description: "Vanilla yogurt with berries, granola & honey.",
+      },
+      {
+        name: "Large Yogurt Fruit Parfait",
+        price: "$5.50",
+        description: "Vanilla yogurt with berries, granola & honey.",
+      },
+      { name: "Muffins", price: "$2.00", description: "Add: cream cheese, butter, or jelly $0.50." },
+      { name: "Croissants", price: "$2.25", description: "Add: cream cheese, butter, or jelly $0.50." },
     ],
   },
   {
     id: "sandwiches",
     label: "Gourmet Sandwiches",
-    banner: "Combo options: Chips/Fruit & Drink $3.25 | Fries & Drink $4.25 | Soup Combo $6.25",
+    banner:
+      "Make it a combo: Chips or Fruit & Bottled Drink $3.25 · French Fries & Bottled Drink $4.25 · Soup Combo $6.25 · Large Soup $7.50",
     items: [
-      { name: "The Turkey & Avocado Sandwich", price: "$8.50", description: "Turkey layered with creamy avocado." },
-      { name: "Turkey Club With Bacon Sandwich", price: "$9.50", description: "A stacked club with smoky bacon." },
-      { name: "Grilled Chicken Caesar Wrap", price: "$9.00", description: "Grilled chicken with Caesar flavor in a wrap." },
-      { name: "The Jerk Chicken Sandwich", price: "$10.50", description: "Bold jerk chicken with cafe-corner attitude." },
-      { name: "The Italian Chicken Sandwich", price: "$9.50", description: "Chicken sandwich with Italian-inspired flavor." },
-      { name: "House Tuna Sandwich", price: "$7.75", description: "House-made tuna sandwich." },
-      { name: "Veggie & Hummus Wrap", price: "$9.00", description: "Fresh vegetables and hummus wrapped to go." },
-      { name: "Egg Sandwich", price: "$5.25", description: "Simple, hot, and made for breakfast cravings." },
-      { name: "Egg & Cheese Sandwich", price: "$6.10", description: "Egg sandwich with melted cheese." },
-      { name: "Bacon, Egg, & Cheese Sandwich", price: "$6.95", description: "Brooklyn breakfast classic." },
+      {
+        name: "The Turkey & Avocado Sandwich",
+        price: "$8.50",
+        description:
+          "Turkey, avocado, lettuce, tomato & pesto dressing on Texas toast. Add: avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "Turkey Club With Bacon Sandwich",
+        price: "$9.50",
+        description:
+          "Turkey, cheese, bacon, lettuce, tomatoes & mayo on Texas toast. Add: avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "Grilled Chicken Caesar Wrap",
+        price: "$9.00",
+        description:
+          "Grilled chicken, romaine lettuce, parmesan cheese, crushed croutons & Caesar dressing. Make it crispy chicken +$1.00. Add: avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "The Jerk Chicken Sandwich",
+        price: "$10.50",
+        description:
+          "House jerk chicken stacked on sweet plantains & cabbage slaw, served with mango salsa & plantain chips. Add: avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "The Italian Chicken Sandwich",
+        price: "$9.50",
+        description:
+          "Thinly sliced marinated chicken breast, mozzarella, lettuce, tomato, fresh basil & balsamic glaze on a brioche bun. Add: avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "House Tuna Sandwich",
+        price: "$7.75",
+        description:
+          "House-made tuna on multigrain bread with lettuce & tomatoes, finished with honey & balsamic glaze. Make it a tuna melt $0.85. Add: cheese $1.25, avocado $1.25, bacon $1.75.",
+      },
+      {
+        name: "Veggie & Hummus Wrap",
+        price: "$9.00",
+        description:
+          "Cucumbers, carrots, tomatoes, avocado, hummus & spring mix lettuce with balsamic glaze in a wrap. Add: avocado $1.25, bacon $1.75.",
+      },
+      { name: "Egg Sandwich", price: "$5.25", description: "Add bacon: $1.75." },
+      { name: "Egg & Cheese Sandwich", price: "$6.10", description: "Add bacon: $1.75." },
+      { name: "Bacon, Egg & Cheese Sandwich", price: "$6.95", description: "Add bacon: $1.75." },
     ],
   },
   {
     id: "salads-wings",
-    label: "Salads Wings & Things",
+    label: "Salads, Wings & Things",
     items: [
-      { name: "Jerk Chicken Salad", price: "$14.50", description: "Fresh greens topped with jerk chicken." },
-      { name: "Chicken Caesar Salad", price: "$13.00", description: "Crisp Caesar salad with chicken." },
-      { name: "The Chicken & Avocado Salad", price: "$14.75", description: "Chicken, avocado, and fresh salad fixings." },
-      { name: "Chicken Wings (6 flavors)", price: "$12.75", description: "Crispy wings with your choice of flavor." },
-      { name: "French Fries", price: "$3.50", description: "Hot, crisp fries." },
-      { name: "Sweet Plantains", price: "$3.50", description: "Tender, caramelized sweet plantains." },
-      { name: "Bacon", price: "$3.50", description: "Crispy side of bacon." },
+      {
+        name: "Jerk Chicken Salad",
+        price: "$14.50",
+        description: "House jerk chicken, cabbage, tomatoes, carrots, cucumber & mangoes.",
+      },
+      {
+        name: "Chicken Caesar Salad",
+        price: "$13.00",
+        description: "Grilled or crispy chicken, crushed croutons, parmesan cheese & dressing.",
+      },
+      {
+        name: "The Chicken & Avocado Salad",
+        price: "$14.75",
+        description: "Grilled chicken, carrots, cucumbers, tomatoes, craisins, walnuts & avocado.",
+      },
+      {
+        name: "Chicken Wings",
+        price: "$12.75",
+        description: "Flavors: plain, honey garlic, mango jerk, BBQ, buffalo, lemon pepper.",
+      },
+      { name: "French Fries", price: "$3.50" },
+      { name: "Sweet Plantains", price: "$3.50" },
+      { name: "Bacon", price: "$3.50" },
     ],
   },
   {
     id: "kids",
     label: "Kids Corner",
-    note: "With chips or fruit and small drink.",
+    note: "Served with chips or fruit and a small drink. Add fruit $0.50, kids side of bacon $2.00. Please contact the takeaway for small drink flavors.",
     items: [
-      { name: "Kids Grilled Cheese", price: "$6.50", description: "Melted cheese on toast, kid-sized." },
-      { name: "Kids Peanut Butter & Jelly", price: "$6.50", description: "A sweet classic with a small side and drink." },
-      { name: "Kids Turkey With Lettuce", price: "$6.50", description: "Turkey sandwich with lettuce." },
-      { name: "Kids Ham, Cheese With Lettuce", price: "$6.50", description: "Ham and cheese with lettuce." },
-      { name: "Kids Nutella On Toast", price: "$6.50", description: "Nutella spread over toast." },
+      { name: "Kids Grilled Cheese", price: "$6.50" },
+      { name: "Kids Peanut Butter & Jelly", price: "$6.50" },
+      { name: "Kids Turkey With Lettuce", price: "$6.50" },
+      { name: "Kids Ham & Cheese With Lettuce", price: "$6.50" },
+      { name: "Kids Nutella On Toast", price: "$6.50" },
     ],
   },
   {
     id: "desserts",
     label: "Desserts",
     items: [
-      { name: "Chocolate Chip Cookie", price: "$2.00", description: "Classic chocolate chip cookie." },
-      { name: "White Chocolate Macadamia Nut Cookie", price: "$2.00", description: "White chocolate and macadamia cookie." },
-      { name: "Macarons (assorted)", price: "$2.00", description: "Assorted delicate macarons." },
-      { name: "Cupcakes", price: "$3.50 each", description: "Lemon Raspberry, Chocolate, Vanilla, Strawberry, or Red Velvet." },
+      { name: "Chocolate Chip Cookie", price: "$2.00" },
+      { name: "White Chocolate Macadamia Nut Cookie", price: "$2.00" },
+      { name: "Macarons", price: "$2.00", description: "Assorted flavors." },
+      { name: "Lemon Raspberry Cupcake", price: "$3.50", subCategory: "Cupcakes" },
+      { name: "Chocolate Cupcake", price: "$3.50", subCategory: "Cupcakes" },
+      { name: "Vanilla Cupcake", price: "$3.50", subCategory: "Cupcakes" },
+      { name: "Strawberry Cupcake", price: "$3.50", subCategory: "Cupcakes" },
+      { name: "Red Velvet Cupcake", price: "$3.50", subCategory: "Cupcakes" },
     ],
   },
   {
-    id: "drinks",
-    label: "Drinks",
+    id: "hot-drinks",
+    label: "Hot Drinks",
     items: [
-      { name: "Hot Chocolate", price: "TBD", description: "Rich, warm hot chocolate." },
-      { name: "15oz Lemonades", price: "$4.25", description: "Bright lemonade served cold." },
-      { name: "15oz Blueberry Basil Lemonade Fruit Smoothie", price: "$4.50", description: "Blueberry, basil, and lemonade blended fresh." },
+      { name: "Small Hot Coffee", price: "$1.25", subCategory: "Hot Coffee" },
+      { name: "Large Hot Coffee", price: "$2.25", subCategory: "Hot Coffee" },
+      { name: "Small Hot Tea", price: "$1.25", subCategory: "Hot Tea" },
+      { name: "Large Hot Tea", price: "$2.25", subCategory: "Hot Tea" },
+      { name: "Small Honey Citrus Ginger Tea", price: "$1.25", subCategory: "Honey Citrus Ginger Tea" },
+      { name: "Large Honey Citrus Ginger Tea", price: "$2.75", subCategory: "Honey Citrus Ginger Tea" },
+      { name: "Small Matcha Latte", price: "$3.75", subCategory: "Matcha Latte" },
+      { name: "Large Matcha Latte", price: "$4.75", subCategory: "Matcha Latte" },
+      { name: "Small Hot Chocolate", price: "$1.50", subCategory: "Hot Chocolate" },
+      { name: "Large Hot Chocolate", price: "$2.50", subCategory: "Hot Chocolate" },
+    ],
+  },
+  {
+    id: "cold-drinks",
+    label: "Cold Drinks",
+    items: [
+      { name: "15oz Iced Coffee", price: "$3.50" },
+      { name: "15oz Iced Tea", price: "$3.00" },
+      { name: "15oz Lemonades", price: "$4.25" },
+      { name: "15oz Blueberry Basil Lemonade Fruit Smoothie", price: "$4.50" },
     ],
   },
 ];

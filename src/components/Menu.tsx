@@ -1,13 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { menuCategories } from "@/lib/menuData";
+import { useEffect, useMemo, useState } from "react";
+import { menuCategories, type MenuCategory, type MenuItem as MenuItemType } from "@/lib/menuData";
 import MenuCategoryTabs from "./MenuCategoryTabs";
 import MenuItem from "./MenuItem";
 
+type Group = { subCategory: string | null; items: MenuItemType[] };
+
+function groupBySubCategory(category: MenuCategory): Group[] {
+  const order: string[] = [];
+  const map = new Map<string, MenuItemType[]>();
+  for (const item of category.items) {
+    const key = item.subCategory ?? "__base__";
+    if (!map.has(key)) {
+      map.set(key, []);
+      order.push(key);
+    }
+    map.get(key)!.push(item);
+  }
+  return order.map((key) => ({
+    subCategory: key === "__base__" ? null : key,
+    items: map.get(key)!,
+  }));
+}
+
 export default function Menu() {
   const [activeId, setActiveId] = useState(menuCategories[0].id);
+
+  const grouped = useMemo(
+    () => menuCategories.map((category) => ({ category, groups: groupBySubCategory(category) })),
+    [],
+  );
 
   useEffect(() => {
     const observers = menuCategories.map((category) => {
@@ -39,7 +63,7 @@ export default function Menu() {
         <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
 
         <div className="space-y-20 pt-14">
-          {menuCategories.map((category) => (
+          {grouped.map(({ category, groups }) => (
             <motion.section
               key={category.id}
               id={category.id}
@@ -61,9 +85,20 @@ export default function Menu() {
                   {category.banner}
                 </div>
               )}
-              <div className="grid gap-4 md:grid-cols-2">
-                {category.items.map((item) => (
-                  <MenuItem key={item.name} item={item} />
+              <div className="space-y-10">
+                {groups.map((group) => (
+                  <div key={group.subCategory ?? "base"}>
+                    {group.subCategory && (
+                      <h4 className="mb-4 font-heading text-xl uppercase tracking-wide text-cafe-roseDeep md:text-2xl">
+                        {group.subCategory}
+                      </h4>
+                    )}
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {group.items.map((item) => (
+                        <MenuItem key={item.name} item={item} />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             </motion.section>
