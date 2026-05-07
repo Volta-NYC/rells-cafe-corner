@@ -124,6 +124,17 @@ export default function MenuItemModal({
             transition={{ duration: 0.22, ease: "easeOut" }}
             className="relative z-10 flex max-h-[92vh] w-full max-w-xl flex-col overflow-hidden rounded-t-3xl border border-cafe-line bg-white text-cafe-ink shadow-2xl sm:rounded-3xl"
           >
+            {item.image && (
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-cafe-bg sm:rounded-t-3xl">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 576px"
+                />
+              </div>
+            )}
             <div className="relative px-6 pb-4 pt-6 sm:px-8 sm:pt-8">
               <button
                 type="button"
