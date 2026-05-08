@@ -7,6 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Location from "@/components/Location";
 import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function HomePage() {
   return (
@@ -14,14 +15,28 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <ChefsSpecial />
-        <Menu />
-        <HowItWorks />
-        <AppDownload />
-        <Location />
+        <ScrollReveal>
+          <About />
+        </ScrollReveal>
+        <ScrollReveal delay={0.05}>
+          <ChefsSpecial />
+        </ScrollReveal>
+        <ScrollReveal delay={0.05}>
+          <Menu />
+        </ScrollReveal>
+        <ScrollReveal delay={0.05}>
+          <HowItWorks />
+        </ScrollReveal>
+        <ScrollReveal delay={0.05}>
+          <AppDownload />
+        </ScrollReveal>
+        <ScrollReveal delay={0.05}>
+          <Location />
+        </ScrollReveal>
       </main>
-      <Footer />
+      <ScrollReveal delay={0.05}>
+        <Footer />
+      </ScrollReveal>
     </>
   );
 }

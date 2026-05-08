@@ -7,13 +7,20 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section id="home" className="relative flex min-h-[100svh] items-end overflow-hidden">
-      <Image
-        src="/images/hero-pastries.webp"
-        alt="Fresh croissants and pastries"
-        fill
-        priority
-        className="object-cover"
-      />
+      <motion.div
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+        className="absolute inset-0"
+      >
+        <Image
+          src="/images/hero-pastries.webp"
+          alt="Fresh croissants and pastries"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.65)_38%,rgba(255,255,255,0.05)_100%)]" />
 
       <motion.div

@@ -31,6 +31,17 @@ export default function Footer() {
           </div>
           <p className="mt-5 text-cafe-muted">Brooklyn&apos;s Favorite Cafe - 276 Chestnut Street</p>
           <p className="mt-4 text-sm text-cafe-subtle">© 2026 Cherylles Kitchen LLC</p>
+          <p className="mt-3 text-sm text-cafe-subtle">
+            Made by{" "}
+            <a
+              href="https://voltanyc.org"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-[var(--volta-green)] transition hover:opacity-85"
+            >
+              Volta
+            </a>
+          </p>
         </div>
         <div>
           <h3 className="mb-4 font-heading uppercase text-cafe-rose">Links</h3>
