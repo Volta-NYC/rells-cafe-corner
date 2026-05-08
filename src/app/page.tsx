@@ -21,9 +21,7 @@ export default function HomePage() {
         <ScrollReveal delay={0.05}>
           <ChefsSpecial />
         </ScrollReveal>
-        <ScrollReveal delay={0.05}>
-          <Menu />
-        </ScrollReveal>
+        <Menu />
         <ScrollReveal delay={0.05}>
           <HowItWorks />
         </ScrollReveal>
