@@ -16,8 +16,8 @@ export default function About() {
           className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-cafe-line shadow-soft"
         >
           <Image
-            src="/images/chicken-waffles.webp"
-            alt="Chicken and waffles"
+            src="/images/rells-chicken-wrap.jpg"
+            alt="Chicken wrap from Rell's Cafe Corner"
             fill
             className="object-cover"
           />

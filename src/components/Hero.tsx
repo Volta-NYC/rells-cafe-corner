@@ -14,11 +14,11 @@ export default function Hero() {
         className="absolute inset-0"
       >
         <Image
-          src="/images/hero-pastries.webp"
-          alt="Fresh croissants and pastries"
+          src="/images/rells-bacon-sandwich.jpg"
+          alt="Bacon sandwich from Rell's Cafe Corner"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
       </motion.div>
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.65)_38%,rgba(255,255,255,0.05)_100%)]" />

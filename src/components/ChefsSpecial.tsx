@@ -5,21 +5,21 @@ import Image from "next/image";
 
 const specials = [
   {
-    name: "Salad",
-    image: "/images/salad.webp",
-    note: "Fresh greens, bold toppings",
-    fit: "object-contain p-8",
-  },
-  {
     name: "Avocado Toast",
-    image: "/images/avocado-toast.webp",
-    note: "Creamy, crisp, breakfast-ready",
+    image: "/images/rells-avocado-toast.jpg",
+    note: "Bright, creamy, breakfast-ready",
     fit: "object-cover",
   },
   {
-    name: "Macarons",
-    image: "/images/macarons.jpg",
-    note: "Sweet bites for the table",
+    name: "Chicken Salad",
+    image: "/images/rells-chicken-salad.jpg",
+    note: "Fresh greens, bold toppings",
+    fit: "object-cover",
+  },
+  {
+    name: "French Toast",
+    image: "/images/rells-french-toast.jpg",
+    note: "Berry-topped and brunch-ready",
     fit: "object-cover",
   },
 ];

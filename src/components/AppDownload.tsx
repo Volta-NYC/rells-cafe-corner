@@ -34,8 +34,8 @@ export default function AppDownload() {
           <div className="h-full overflow-hidden rounded-[1.45rem] border border-cafe-line bg-white">
             <div className="relative h-40">
               <Image
-                src="/images/chicken-waffles.webp"
-                alt=""
+                src="/images/rells-empanadas.jpg"
+                alt="Fresh empanadas from Rell's Cafe Corner"
                 fill
                 className="object-cover"
               />
