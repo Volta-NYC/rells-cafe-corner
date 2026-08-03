@@ -1,31 +1,30 @@
 import Image from "next/image";
+import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 
 export default function AppDownload() {
   return (
     <section className="overflow-hidden bg-white py-20">
       <div className="mx-auto grid max-w-7xl items-center gap-10 rounded-[28px] border border-cafe-line bg-cafe-tintSoft px-6 py-12 md:grid-cols-[1fr_320px] md:px-12">
         <div>
-          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-rose">Rell&apos;s on the go</p>
-          <h2 className="font-heading text-4xl uppercase text-cafe-ink sm:text-5xl md:text-6xl">Download Our App</h2>
-          <p className="mt-4 text-lg text-cafe-inkSoft/80">Get exclusive discounts and a smooth ordering experience</p>
+          <p className="mb-3 text-sm font-extrabold uppercase text-cafe-rose">Order with DoorDash</p>
+          <h2 className="font-heading text-4xl uppercase text-cafe-ink sm:text-5xl md:text-6xl">Pickup Or Delivery</h2>
+          <p className="mt-4 text-lg text-cafe-inkSoft/80">Choose the option that works for you, then place your order directly through DoorDash.</p>
           <div className="mt-7 flex flex-wrap gap-4">
             <a
-              href="https://apps.apple.com/us/app/cherylles-kitchen-llc/id6753680663"
+              href={DOORDASH_DELIVERY_URL}
               target="_blank"
               rel="noreferrer"
-              aria-label="Download on the App Store"
-              className="transition hover:opacity-85"
+              className="rounded-full bg-cafe-ink px-6 py-4 text-sm font-extrabold uppercase text-white transition hover:bg-cafe-rose"
             >
-              <Image src="/images/appstore.svg" alt="Download on the App Store" width={164} height={50} />
+              DoorDash Delivery
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.fh885262"
+              href={DOORDASH_PICKUP_URL}
               target="_blank"
               rel="noreferrer"
-              aria-label="Get it on Google Play"
-              className="transition hover:opacity-85"
+              className="rounded-full border border-cafe-ink/20 px-6 py-4 text-sm font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose"
             >
-              <Image src="/images/playstore.svg" alt="Get it on Google Play" width={164} height={50} />
+              DoorDash Pickup
             </a>
           </div>
         </div>
@@ -41,10 +40,10 @@ export default function AppDownload() {
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />
-              <p className="absolute bottom-4 left-4 font-heading text-xl uppercase text-cafe-ink">Order Rell&apos;s</p>
+              <p className="absolute bottom-4 left-4 font-heading text-xl uppercase text-cafe-ink">Rell&apos;s On DoorDash</p>
             </div>
             <div className="space-y-3 p-4">
-              {["Turkey & Avocado", "Chicken & Waffles", "Blueberry Basil"].map((item) => (
+              {["Delivery", "Pickup", "Your Rell's Favorites"].map((item) => (
                 <div key={item} className="flex items-center justify-between rounded-xl border border-cafe-line bg-cafe-bg px-3 py-3">
                   <span className="text-xs font-bold text-cafe-ink">{item}</span>
                   <span className="h-2 w-2 rounded-full bg-cafe-rose" />

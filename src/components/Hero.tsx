@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 
 export default function Hero() {
   return (
@@ -43,9 +44,12 @@ export default function Hero() {
           <Link href="#menu" className="w-full rounded-full bg-cafe-ink px-7 py-4 text-center text-sm font-extrabold uppercase text-white transition hover:bg-cafe-rose sm:w-auto">
             View Menu
           </Link>
-          <Link href="#menu" className="w-full rounded-full border border-cafe-ink/20 bg-white/70 px-7 py-4 text-center text-sm font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose sm:w-auto">
-            Order Now
-          </Link>
+          <a href={DOORDASH_DELIVERY_URL} target="_blank" rel="noreferrer" className="w-full rounded-full border border-cafe-ink/20 bg-white/70 px-7 py-4 text-center text-sm font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose sm:w-auto">
+            DoorDash Delivery
+          </a>
+          <a href={DOORDASH_PICKUP_URL} target="_blank" rel="noreferrer" className="w-full rounded-full border border-cafe-ink/20 bg-white/70 px-7 py-4 text-center text-sm font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose sm:w-auto">
+            DoorDash Pickup
+          </a>
         </div>
       </motion.div>
 

@@ -1,10 +1,10 @@
 "use client";
 
-import { Menu, ShoppingBag, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { useCart } from "@/lib/cart";
+import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 
 const links = [
   { label: "Home", href: "/#home" },
@@ -15,7 +15,6 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const { count, openCart } = useCart();
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-cafe-line bg-white/85 backdrop-blur-xl">
@@ -40,41 +39,25 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <button
-            type="button"
-            onClick={openCart}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-cafe-line text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose"
-            aria-label={`Open cart${count ? `, ${count} item${count === 1 ? "" : "s"}` : ""}`}
+          <a
+            href={DOORDASH_DELIVERY_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-sm font-semibold uppercase text-cafe-inkSoft transition hover:text-cafe-rose"
           >
-            <ShoppingBag size={18} />
-            {count > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cafe-rose px-1 text-[10px] font-extrabold text-white">
-                {count}
-              </span>
-            )}
-          </button>
-          <Link
-            href="/#menu"
+            Delivery
+          </a>
+          <a
+            href={DOORDASH_PICKUP_URL}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-cafe-ink px-5 py-3 text-sm font-extrabold uppercase text-white transition hover:bg-cafe-rose"
           >
-            Order Now
-          </Link>
+            Pickup
+          </a>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <button
-            type="button"
-            onClick={openCart}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-cafe-line text-cafe-ink"
-            aria-label={`Open cart${count ? `, ${count} item${count === 1 ? "" : "s"}` : ""}`}
-          >
-            <ShoppingBag size={18} />
-            {count > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-cafe-rose px-1 text-[10px] font-extrabold text-white">
-                {count}
-              </span>
-            )}
-          </button>
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
@@ -95,13 +78,22 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#menu"
-              onClick={() => setOpen(false)}
+            <a
+              href={DOORDASH_DELIVERY_URL}
+              target="_blank"
+              rel="noreferrer"
               className="mt-2 rounded-full bg-cafe-ink px-5 py-3 text-center text-sm font-extrabold uppercase text-white"
             >
-              Order Now
-            </Link>
+              DoorDash Delivery
+            </a>
+            <a
+              href={DOORDASH_PICKUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-cafe-ink/20 px-5 py-3 text-center text-sm font-extrabold uppercase text-cafe-ink"
+            >
+              DoorDash Pickup
+            </a>
           </div>
         </div>
       )}

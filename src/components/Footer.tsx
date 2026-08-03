@@ -3,7 +3,8 @@ import Link from "next/link";
 
 const footerLinks = [
   { label: "Menu", href: "/#menu", external: false },
-  { label: "Order Now", href: "/#menu", external: false },
+  { label: "DoorDash Delivery", href: "https://www.doordash.com/store/rells-cafe-corner-brooklyn-33357089/", external: true },
+  { label: "DoorDash Pickup", href: "https://www.doordash.com/store/rells-cafe-corner-brooklyn-33357089/?pickup=true", external: true },
   { label: "About", href: "/#about", external: false },
   { label: "Reviews", href: "https://rellscafecorner.com/reviews", external: true },
   { label: "Contact Us", href: "/#contact", external: false },

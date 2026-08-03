@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const steps = [
   { icon: UtensilsCrossed, title: "Browse the Menu", text: "Check out our full menu of sandwiches, breakfast, salads & more." },
-  { icon: Clock, title: "Place Your Order", text: "Order online for delivery in 30 mins or pickup in just 15 mins." },
+  { icon: Clock, title: "Choose Delivery Or Pickup", text: "Order through DoorDash for delivery or pickup in just 15 minutes." },
   { icon: Sparkles, title: "Enjoy!", text: "Freshly prepared, every time. We don't compromise on quality." },
 ];
 

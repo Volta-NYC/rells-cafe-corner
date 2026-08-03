@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import { menuCategories, type MenuCategory, type MenuItem as MenuItemType } from "@/lib/menuData";
+import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 import MenuCategoryTabs from "./MenuCategoryTabs";
 import MenuItem from "./MenuItem";
 
@@ -59,6 +60,14 @@ export default function Menu() {
           <p className="mb-4 text-sm font-extrabold uppercase text-cafe-rose">Full Menu</p>
           <h2 className="font-heading text-4xl uppercase leading-none text-cafe-ink sm:text-5xl md:text-7xl">Made Fresh, Built To Crave</h2>
           <p className="mt-6 text-lg leading-8 text-cafe-inkSoft/80">Breakfast, sandwiches, wings, sweets, and drinks with enough room to actually read what you want.</p>
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a href={DOORDASH_DELIVERY_URL} target="_blank" rel="noreferrer" className="inline-flex justify-center rounded-full bg-cafe-ink px-6 py-3 text-sm font-extrabold uppercase text-white transition hover:bg-cafe-rose">
+              DoorDash Delivery
+            </a>
+            <a href={DOORDASH_PICKUP_URL} target="_blank" rel="noreferrer" className="inline-flex justify-center rounded-full border border-cafe-ink/20 px-6 py-3 text-sm font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose">
+              DoorDash Pickup
+            </a>
+          </div>
         </div>
         <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
 
