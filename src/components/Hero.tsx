@@ -22,7 +22,7 @@ export default function Hero() {
           className="object-cover object-center"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0.65)_38%,rgba(255,255,255,0.05)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.55)_38%,rgba(255,255,255,0.05)_100%)]" />
 
       <motion.div
         initial={{ opacity: 0, y: 42 }}
