@@ -22,6 +22,7 @@ export default function Hero() {
           className="object-cover object-center"
         />
       </motion.div>
+      <div className="hero-photo-frame" aria-hidden="true" />
       <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.55)_38%,rgba(255,255,255,0.05)_100%)]" />
 
       <motion.div

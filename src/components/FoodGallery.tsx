@@ -57,7 +57,7 @@ export default function FoodGallery() {
               <article
                 key={`${image.src}-${index}`}
                 aria-hidden={isDuplicate}
-                className="group relative h-[300px] w-[220px] shrink-0 overflow-hidden rounded-[22px] border-2 border-white bg-white p-2 shadow-card sm:h-[350px] sm:w-[255px]"
+                className="photo-frame group relative h-[300px] w-[220px] shrink-0 overflow-hidden rounded-[22px] border-2 border-white bg-white p-2 shadow-card sm:h-[350px] sm:w-[255px]"
               >
                 <div className="relative h-full overflow-hidden rounded-[15px] bg-cafe-tint">
                   <Image

@@ -31,7 +31,7 @@ export default function AppDownload() {
         <div className="relative mx-auto h-[430px] w-[220px] rounded-[2rem] border border-cafe-line bg-white p-3 shadow-soft">
           <div className="absolute left-1/2 top-3 h-1.5 w-16 -translate-x-1/2 rounded-full bg-cafe-line" />
           <div className="h-full overflow-hidden rounded-[1.45rem] border border-cafe-line bg-white">
-            <div className="relative h-40">
+            <div className="photo-frame relative h-40">
               <Image
                 src="/images/rells-empanadas.jpg"
                 alt="Fresh empanadas from Rell's Cafe Corner"

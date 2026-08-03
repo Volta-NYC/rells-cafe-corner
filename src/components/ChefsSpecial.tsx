@@ -43,7 +43,7 @@ export default function ChefsSpecial() {
               whileHover={{ rotateX: 4, rotateY: -5, y: -8 }}
               className="group rounded-[20px] border border-cafe-line bg-white p-3 shadow-card transition-colors hover:border-cafe-rose/60"
             >
-              <div className="relative h-72 overflow-hidden rounded-2xl bg-cafe-tintSoft">
+              <div className="photo-frame relative h-72 overflow-hidden rounded-2xl bg-cafe-tintSoft">
                 <Image
                   src={item.image}
                   alt={item.name}

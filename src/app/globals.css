@@ -36,6 +36,44 @@ html, body {
   animation: saucyPulse 2.4s ease-in-out infinite;
 }
 
+.hero-photo-frame {
+  position: absolute;
+  inset: 1.25rem;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 1.75rem;
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.photo-frame {
+  isolation: isolate;
+}
+
+.photo-frame::before,
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.photo-frame::before {
+  inset: 0.55rem;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: inherit;
+}
+
+.photo-frame::after {
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 3;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-right: 2px solid #E85A6F;
+  border-top: 2px solid #E85A6F;
+}
+
 @keyframes saucyPulse {
   0%, 100% {
     filter: drop-shadow(0 0 8px rgba(232, 90, 111, 0.35));

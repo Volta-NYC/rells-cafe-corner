@@ -13,7 +13,7 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.7 }}
-          className="relative min-h-[420px] overflow-hidden rounded-[28px] border border-cafe-line shadow-soft"
+          className="photo-frame relative min-h-[420px] overflow-hidden rounded-[28px] border border-cafe-line shadow-soft"
         >
           <Image
             src="/images/rells-chicken-wrap.jpg"
