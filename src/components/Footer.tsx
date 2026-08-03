@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 
 const footerLinks = [
   { label: "Menu", href: "/#menu", external: false },
-  { label: "DoorDash Delivery", href: "https://www.doordash.com/store/rells-cafe-corner-brooklyn-33357089/", external: true },
-  { label: "DoorDash Pickup", href: "https://www.doordash.com/store/rells-cafe-corner-brooklyn-33357089/?pickup=true", external: true },
+  { label: "DoorDash Delivery", href: DOORDASH_DELIVERY_URL, external: true },
+  { label: "DoorDash Pickup", href: DOORDASH_PICKUP_URL, external: true },
   { label: "About", href: "/#about", external: false },
   { label: "Reviews", href: "https://rellscafecorner.com/reviews", external: true },
   { label: "Contact Us", href: "/#contact", external: false },
@@ -64,26 +65,24 @@ export default function Footer() {
           </div>
         </div>
         <div>
-          <h3 className="mb-4 font-heading uppercase text-cafe-rose">Accepted Here</h3>
-          <p className="text-sm text-cafe-inkSoft/85">Visa, MasterCard, Visa Electron, AmEx</p>
+          <h3 className="mb-4 font-heading uppercase text-cafe-rose">Order On DoorDash</h3>
+          <p className="text-sm text-cafe-inkSoft/85">Choose delivery or pickup, then order directly through DoorDash.</p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="https://apps.apple.com/us/app/cherylles-kitchen-llc/id6753680663"
+              href={DOORDASH_DELIVERY_URL}
               target="_blank"
               rel="noreferrer"
-              aria-label="Download on the App Store"
-              className="transition hover:opacity-85"
+              className="rounded-full bg-cafe-ink px-5 py-3 text-xs font-extrabold uppercase text-white transition hover:bg-cafe-rose"
             >
-              <Image src="/images/appstore.svg" alt="Download on the App Store" width={128} height={39} />
+              Delivery
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id=com.fh885262"
+              href={DOORDASH_PICKUP_URL}
               target="_blank"
               rel="noreferrer"
-              aria-label="Get it on Google Play"
-              className="transition hover:opacity-85"
+              className="rounded-full border border-cafe-ink/20 px-5 py-3 text-xs font-extrabold uppercase text-cafe-ink transition hover:border-cafe-rose hover:text-cafe-rose"
             >
-              <Image src="/images/playstore.svg" alt="Get it on Google Play" width={128} height={39} />
+              Pickup
             </a>
           </div>
         </div>

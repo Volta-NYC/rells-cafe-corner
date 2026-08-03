@@ -58,20 +58,17 @@ html, body {
 }
 
 .photo-frame::before {
-  inset: 0.55rem;
+  inset: 0.45rem;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(10, 10, 10, 0.16);
   border-radius: inherit;
 }
 
 .photo-frame::after {
-  right: 0.75rem;
-  top: 0.75rem;
+  inset: 0.72rem;
   z-index: 3;
-  height: 1.5rem;
-  width: 1.5rem;
-  border-right: 2px solid #E85A6F;
-  border-top: 2px solid #E85A6F;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: inherit;
 }
 
 @keyframes saucyPulse {
@@ -85,16 +82,9 @@ html, body {
 
 .food-gallery-window {
   position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   contain: paint;
   touch-action: pan-y;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.food-gallery-window::-webkit-scrollbar {
-  display: none;
 }
 
 .food-gallery-window::before,
@@ -122,4 +112,5 @@ html, body {
   display: flex;
   gap: 1rem;
   width: max-content;
+  will-change: transform;
 }

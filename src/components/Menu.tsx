@@ -71,7 +71,7 @@ export default function Menu() {
         </div>
         <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
 
-        <div className="space-y-20 pt-14">
+        <div className="space-y-8 pt-14">
           {grouped.map(({ category, groups }) => (
             <motion.section
               key={category.id}
@@ -80,9 +80,9 @@ export default function Menu() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55 }}
-              className="scroll-mt-40"
+              className="scroll-mt-40 border border-cafe-line border-l-4 border-l-cafe-rose bg-cafe-tintSoft p-6 shadow-card md:p-9"
             >
-              <div className="mb-7 flex flex-col justify-between gap-3 border-b border-cafe-line pb-5 md:flex-row md:items-end">
+              <div className="mb-7 flex flex-col justify-between gap-3 border-b border-cafe-ink/15 pb-5 md:flex-row md:items-end">
                 <div>
                   <h3 className="font-heading text-3xl uppercase text-cafe-ink md:text-5xl">{category.label}</h3>
                   {category.note && <p className="mt-3 text-sm uppercase tracking-normal text-cafe-muted">{category.note}</p>}
@@ -94,19 +94,19 @@ export default function Menu() {
                   {category.banner}
                 </div>
               )}
-              <div className="space-y-10">
+              <div className="space-y-8">
                 {groups.map((group) => (
                   <div key={group.subCategory ?? "base"}>
                     {group.subCategory && (
-                      <h4 className="mb-4 font-heading text-xl uppercase tracking-wide text-cafe-roseDeep md:text-2xl">
+                      <h4 className="mb-3 font-heading text-xl uppercase tracking-wide text-cafe-roseDeep md:text-2xl">
                         {group.subCategory}
                       </h4>
                     )}
-                    <div className="grid gap-4 md:grid-cols-2">
+                    <ul className="grid gap-x-10 md:grid-cols-2">
                       {group.items.map((item) => (
                         <MenuItem key={item.name} item={item} />
                       ))}
-                    </div>
+                    </ul>
                   </div>
                 ))}
               </div>

@@ -22,14 +22,15 @@ const loopingGalleryImages = [...galleryImages, ...galleryImages];
 
 export default function FoodGallery() {
   const sectionRef = useRef<HTMLElement>(null);
-  const galleryRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
   const pauseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const offsetRef = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
   const isInView = useInView(sectionRef, { amount: 0.15 });
 
   useEffect(() => {
-    const gallery = galleryRef.current;
-    if (!gallery || isPaused || !isInView) return;
+    const track = trackRef.current;
+    if (!track || isPaused || !isInView) return;
 
     let frameId = 0;
     let previousTime = performance.now();
@@ -37,11 +38,11 @@ export default function FoodGallery() {
     const scrollGallery = (time: number) => {
       const elapsed = time - previousTime;
       previousTime = time;
-      const loopWidth = gallery.scrollWidth / 2;
+      const loopWidth = track.scrollWidth / 2;
 
       if (loopWidth > 0) {
-        gallery.scrollLeft += elapsed * 0.04;
-        if (gallery.scrollLeft >= loopWidth) gallery.scrollLeft -= loopWidth;
+        offsetRef.current = (offsetRef.current + elapsed * 0.04) % loopWidth;
+        track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
       }
 
       frameId = requestAnimationFrame(scrollGallery);
@@ -58,14 +59,21 @@ export default function FoodGallery() {
   }, []);
 
   const scrollByCard = (direction: 1 | -1) => {
-    const gallery = galleryRef.current;
-    if (!gallery) return;
+    const track = trackRef.current;
+    if (!track) return;
+    const loopWidth = track.scrollWidth / 2;
+    if (!loopWidth) return;
 
     setIsPaused(true);
-    gallery.scrollBy({ left: direction * 280, behavior: "smooth" });
+    offsetRef.current = (offsetRef.current + direction * 280 + loopWidth) % loopWidth;
+    track.style.transition = "transform 420ms cubic-bezier(0.16, 1, 0.3, 1)";
+    track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
 
     if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
-    pauseTimerRef.current = setTimeout(() => setIsPaused(false), 900);
+    pauseTimerRef.current = setTimeout(() => {
+      track.style.transition = "";
+      setIsPaused(false);
+    }, 650);
   };
 
   return (
@@ -117,8 +125,8 @@ export default function FoodGallery() {
         </div>
       </motion.div>
 
-      <div ref={galleryRef} className="food-gallery-window" aria-label="Rell's Cafe Corner food gallery">
-        <div id="food-gallery-track" className="food-gallery-track">
+      <div className="food-gallery-window" aria-label="Rell's Cafe Corner food gallery">
+        <div ref={trackRef} id="food-gallery-track" className="food-gallery-track">
           {loopingGalleryImages.map((image, index) => {
             const isDuplicate = index >= galleryImages.length;
 
