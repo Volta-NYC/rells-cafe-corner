@@ -15,8 +15,8 @@ export default function Hero() {
         className="absolute inset-0"
       >
         <Image
-          src="/images/rells-bacon-sandwich.jpg"
-          alt="Bacon sandwich from Rell's Cafe Corner"
+          src="/images/rells-gallery-club-sandwich.jpg"
+          alt="Rell's signature club sandwich"
           fill
           priority
           className="object-cover object-center"

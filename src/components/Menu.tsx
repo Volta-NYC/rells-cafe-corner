@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { menuCategories, type MenuCategory, type MenuItem as MenuItemType } from "@/lib/menuData";
 import { DOORDASH_DELIVERY_URL, DOORDASH_PICKUP_URL } from "@/lib/doordash";
 import MenuCategoryTabs from "./MenuCategoryTabs";
@@ -34,24 +34,8 @@ export default function Menu() {
     [],
   );
 
-  useEffect(() => {
-    const observers = menuCategories.map((category) => {
-      const element = document.getElementById(category.id);
-      if (!element) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveId(category.id);
-        },
-        { rootMargin: "-35% 0px -55% 0px", threshold: 0 }
-      );
-
-      observer.observe(element);
-      return observer;
-    });
-
-    return () => observers.forEach((observer) => observer?.disconnect());
-  }, []);
+  const activeCategory =
+    grouped.find(({ category }) => category.id === activeId) ?? grouped[0];
 
   return (
     <section id="menu" className="bg-white py-24 md:py-32">
@@ -69,49 +53,58 @@ export default function Menu() {
             </a>
           </div>
         </div>
-        <MenuCategoryTabs categories={menuCategories} activeId={activeId} />
+        <MenuCategoryTabs
+          categories={menuCategories}
+          activeId={activeId}
+          onSelect={setActiveId}
+        />
 
-        <div className="space-y-8 pt-14">
-          {grouped.map(({ category, groups }) => (
-            <motion.section
-              key={category.id}
-              id={category.id}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.55 }}
-              className="scroll-mt-40 border border-cafe-line border-l-4 border-l-cafe-rose bg-cafe-tintSoft p-6 shadow-card md:p-9"
-            >
-              <div className="mb-7 flex flex-col justify-between gap-3 border-b border-cafe-ink/15 pb-5 md:flex-row md:items-end">
-                <div>
-                  <h3 className="font-heading text-3xl uppercase text-cafe-ink md:text-5xl">{category.label}</h3>
-                  {category.note && <p className="mt-3 text-sm uppercase tracking-normal text-cafe-muted">{category.note}</p>}
-                </div>
-                <p className="text-sm font-bold uppercase text-cafe-rose/85">{category.items.length} items</p>
+        <div className="pt-14">
+          <motion.section
+            key={activeCategory.category.id}
+            id="active-menu-category"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="border border-cafe-line border-l-4 border-l-cafe-rose bg-cafe-tintSoft p-6 shadow-card md:p-9"
+          >
+            <div className="mb-7 flex flex-col justify-between gap-3 border-b border-cafe-ink/15 pb-5 md:flex-row md:items-end">
+              <div>
+                <h3 className="font-heading text-3xl uppercase text-cafe-ink md:text-5xl">
+                  {activeCategory.category.label}
+                </h3>
+                {activeCategory.category.note && (
+                  <p className="mt-3 text-sm uppercase tracking-normal text-cafe-muted">
+                    {activeCategory.category.note}
+                  </p>
+                )}
               </div>
-              {category.banner && (
-                <div className="mb-6 rounded-2xl border border-cafe-rose/30 bg-cafe-tint px-5 py-4 text-sm font-bold text-cafe-roseDeep">
-                  {category.banner}
-                </div>
-              )}
-              <div className="space-y-8">
-                {groups.map((group) => (
-                  <div key={group.subCategory ?? "base"}>
-                    {group.subCategory && (
-                      <h4 className="mb-3 font-heading text-xl uppercase tracking-wide text-cafe-roseDeep md:text-2xl">
-                        {group.subCategory}
-                      </h4>
-                    )}
-                    <ul className="grid gap-x-10 md:grid-cols-2">
-                      {group.items.map((item) => (
-                        <MenuItem key={item.name} item={item} />
-                      ))}
-                    </ul>
-                  </div>
-                ))}
+              <p className="text-sm font-bold uppercase text-cafe-rose/85">
+                {activeCategory.category.items.length} items
+              </p>
+            </div>
+            {activeCategory.category.banner && (
+              <div className="mb-6 rounded-2xl border border-cafe-rose/30 bg-cafe-tint px-5 py-4 text-sm font-bold text-cafe-roseDeep">
+                {activeCategory.category.banner}
               </div>
-            </motion.section>
-          ))}
+            )}
+            <div className="space-y-8">
+              {activeCategory.groups.map((group) => (
+                <div key={group.subCategory ?? "base"}>
+                  {group.subCategory && (
+                    <h4 className="mb-3 font-heading text-xl uppercase tracking-wide text-cafe-roseDeep md:text-2xl">
+                      {group.subCategory}
+                    </h4>
+                  )}
+                  <ul className="grid gap-x-10 md:grid-cols-2">
+                    {group.items.map((item) => (
+                      <MenuItem key={item.name} item={item} />
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.section>
         </div>
       </div>
     </section>
