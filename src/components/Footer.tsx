@@ -36,12 +36,12 @@ export default function Footer() {
           <p className="mt-3 text-sm text-cafe-subtle">
             Made by{" "}
             <a
-              href="https://voltanyc.org"
+              href="https://novusnyc.org"
               target="_blank"
               rel="noreferrer"
               className="font-semibold text-[var(--volta-green)] transition hover:opacity-85"
             >
-              Volta
+              Novus
             </a>
           </p>
         </div>
