@@ -19,6 +19,7 @@ export default function About() {
             src="/images/rells-chicken-wrap.jpg"
             alt="Chicken wrap from Rell's Cafe Corner"
             fill
+            sizes="(min-width: 768px) 45vw, 100vw"
             className="object-cover"
           />
         </motion.div>

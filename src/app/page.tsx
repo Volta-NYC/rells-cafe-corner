@@ -2,6 +2,7 @@ import About from "@/components/About";
 import AppDownload from "@/components/AppDownload";
 import ChefsSpecial from "@/components/ChefsSpecial";
 import Footer from "@/components/Footer";
+import FoodGallery from "@/components/FoodGallery";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Location from "@/components/Location";
@@ -21,6 +22,7 @@ export default function HomePage() {
         <ScrollReveal delay={0.05}>
           <ChefsSpecial />
         </ScrollReveal>
+        <FoodGallery />
         <Menu />
         <ScrollReveal delay={0.05}>
           <HowItWorks />

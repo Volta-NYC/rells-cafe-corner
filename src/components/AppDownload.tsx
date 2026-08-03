@@ -37,6 +37,7 @@ export default function AppDownload() {
                 src="/images/rells-empanadas.jpg"
                 alt="Fresh empanadas from Rell's Cafe Corner"
                 fill
+                sizes="220px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent" />

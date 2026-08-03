@@ -44,7 +44,13 @@ export default function ChefsSpecial() {
               className="group rounded-[20px] border border-cafe-line bg-white p-3 shadow-card transition-colors hover:border-cafe-rose/60"
             >
               <div className="relative h-72 overflow-hidden rounded-2xl bg-cafe-tintSoft">
-                <Image src={item.image} alt={item.name} fill className={`${item.fit} transition duration-500 group-hover:scale-105`} />
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  sizes="(min-width: 768px) 31vw, 100vw"
+                  className={`${item.fit} transition duration-500 group-hover:scale-105`}
+                />
               </div>
               <h3 className="mt-5 text-center font-heading text-2xl uppercase text-cafe-ink">{item.name}</h3>
               <p className="mb-2 mt-2 text-center text-sm text-cafe-muted">{item.note}</p>
