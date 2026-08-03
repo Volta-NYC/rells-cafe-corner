@@ -85,9 +85,16 @@ html, body {
 
 .food-gallery-window {
   position: relative;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   contain: paint;
   touch-action: pan-y;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.food-gallery-window::-webkit-scrollbar {
+  display: none;
 }
 
 .food-gallery-window::before,
@@ -115,28 +122,4 @@ html, body {
   display: flex;
   gap: 1rem;
   width: max-content;
-  will-change: transform;
-  animation: foodGalleryScroll 48s linear infinite;
-}
-
-.food-gallery-window:hover .food-gallery-track {
-  animation-play-state: paused;
-}
-
-@keyframes foodGalleryScroll {
-  to {
-    transform: translateX(calc(-50% - 0.5rem));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .food-gallery-track {
-    animation: none;
-  }
-}
-
-@media (hover: none) {
-  .food-gallery-track {
-    animation-duration: 64s;
-  }
 }

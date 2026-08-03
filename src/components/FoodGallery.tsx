@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const galleryImages = [
   { src: "/images/rells-gallery-breakfast-bowl.jpg", alt: "Breakfast bowl from Rell's Cafe Corner" },
@@ -19,8 +21,55 @@ const galleryImages = [
 const loopingGalleryImages = [...galleryImages, ...galleryImages];
 
 export default function FoodGallery() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const pauseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
+  const isInView = useInView(sectionRef, { amount: 0.15 });
+
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery || isPaused || !isInView) return;
+
+    let frameId = 0;
+    let previousTime = performance.now();
+
+    const scrollGallery = (time: number) => {
+      const elapsed = time - previousTime;
+      previousTime = time;
+      const loopWidth = gallery.scrollWidth / 2;
+
+      if (loopWidth > 0) {
+        gallery.scrollLeft += elapsed * 0.04;
+        if (gallery.scrollLeft >= loopWidth) gallery.scrollLeft -= loopWidth;
+      }
+
+      frameId = requestAnimationFrame(scrollGallery);
+    };
+
+    frameId = requestAnimationFrame(scrollGallery);
+    return () => cancelAnimationFrame(frameId);
+  }, [isInView, isPaused]);
+
+  useEffect(() => {
+    return () => {
+      if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    };
+  }, []);
+
+  const scrollByCard = (direction: 1 | -1) => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    setIsPaused(true);
+    gallery.scrollBy({ left: direction * 280, behavior: "smooth" });
+
+    if (pauseTimerRef.current) clearTimeout(pauseTimerRef.current);
+    pauseTimerRef.current = setTimeout(() => setIsPaused(false), 900);
+  };
+
   return (
-    <section aria-labelledby="gallery-heading" className="overflow-hidden border-y border-cafe-line bg-cafe-tintSoft py-20 md:py-24">
+    <section ref={sectionRef} aria-labelledby="gallery-heading" className="overflow-hidden border-y border-cafe-line bg-cafe-tintSoft py-20 md:py-24">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -34,22 +83,42 @@ export default function FoodGallery() {
             Made to crave
           </h2>
         </div>
-        <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24" aria-hidden="true">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 rounded-full border border-dashed border-cafe-rose"
-          />
-          <div className="absolute inset-2 overflow-hidden rounded-full border border-cafe-ink/15 bg-white p-1">
-            <div className="relative h-full w-full overflow-hidden rounded-full">
-              <Image src="/images/rells-gallery-breakfast-bowl.jpg" alt="" fill sizes="96px" className="object-cover" />
+        <div className="flex items-center gap-3">
+          <div className="flex rounded-full border border-cafe-ink/15 bg-white p-1 shadow-card">
+            <button
+              type="button"
+              onClick={() => scrollByCard(-1)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-cafe-ink transition hover:bg-cafe-tint hover:text-cafe-rose"
+              aria-label="Show previous gallery images"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollByCard(1)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-cafe-ink transition hover:bg-cafe-tint hover:text-cafe-rose"
+              aria-label="Show next gallery images"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+          <div className="relative h-20 w-20 shrink-0 sm:h-24 sm:w-24" aria-hidden="true">
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 rounded-full border border-dashed border-cafe-rose"
+            />
+            <div className="absolute inset-2 overflow-hidden rounded-full border border-cafe-ink/15 bg-white p-1">
+              <div className="relative h-full w-full overflow-hidden rounded-full">
+                <Image src="/images/rells-gallery-breakfast-bowl.jpg" alt="" fill sizes="96px" className="object-cover" />
+              </div>
             </div>
           </div>
         </div>
       </motion.div>
 
-      <div className="food-gallery-window" aria-label="Rell's Cafe Corner food gallery">
-        <div className="food-gallery-track">
+      <div ref={galleryRef} className="food-gallery-window" aria-label="Rell's Cafe Corner food gallery">
+        <div id="food-gallery-track" className="food-gallery-track">
           {loopingGalleryImages.map((image, index) => {
             const isDuplicate = index >= galleryImages.length;
 
