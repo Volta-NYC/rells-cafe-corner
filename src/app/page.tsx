@@ -1,5 +1,4 @@
 import About from "@/components/About";
-import AppDownload from "@/components/AppDownload";
 import ChefsSpecial from "@/components/ChefsSpecial";
 import Footer from "@/components/Footer";
 import FoodGallery from "@/components/FoodGallery";
@@ -26,9 +25,6 @@ export default function HomePage() {
         <Menu />
         <ScrollReveal delay={0.05}>
           <HowItWorks />
-        </ScrollReveal>
-        <ScrollReveal delay={0.05}>
-          <AppDownload />
         </ScrollReveal>
         <ScrollReveal delay={0.05}>
           <Location />
