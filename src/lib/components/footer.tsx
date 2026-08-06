@@ -7,12 +7,12 @@ export default function Footer() {
         <div className="flex flex-col gap-1">
           <div>© {new Date().getFullYear()} Business Name</div>
           <Link
-            href="https://nyc.voltanpo.org"
+            href="https://www.novusnyc.org/"
             target="_blank"
             rel="noreferrer"
-            className="text-gray-600 hover:underline"
+            className="text-[#F6B78D] hover:text-[#F6B78D]"
           >
-            Website made by @VoltaNYC
+            Made by Novus
           </Link>
         </div>
         <div>Built with Volta</div>

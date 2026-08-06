@@ -36,10 +36,10 @@ export default function Footer() {
           <p className="mt-3 text-sm text-cafe-subtle">
             Made by{" "}
             <a
-              href="https://novusnyc.org"
+              href="https://www.novusnyc.org/"
               target="_blank"
               rel="noreferrer"
-              className="font-semibold text-[var(--volta-green)] transition hover:opacity-85"
+              className="font-semibold text-[#F6B78D] hover:text-[#F6B78D]"
             >
               Novus
             </a>
